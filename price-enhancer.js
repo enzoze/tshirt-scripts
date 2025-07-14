@@ -1,50 +1,41 @@
 // price-enhancer.js
 
-function enhanceProductCards() {
-  const productCards = document.querySelectorAll(".product-list-item");
-
-  productCards.forEach(card => {
-    const link = card.querySelector("a");
-    const priceEl = card.querySelector(".product-price");
-
-    if (!link || !priceEl || priceEl.dataset.enhanced === "true") return;
-
-    const productUrl = link.getAttribute("href");
-    const productIdMatch = productUrl.match(/product\/(\d+)/);
-    if (!productIdMatch) return;
-
-    const productId = productIdMatch[1];
-    priceEl.dataset.enhanced = "true";
-
-    fetch(`/store-api/products/${productId}`)
-      .then(res => res.ok ? res.json() : Promise.reject("API error"))
-      .then(data => {
-        if (data?.PriceFormatted) {
-          priceEl.innerHTML = data.PriceFormatted;
-          priceEl.style.visibility = "visible";
-        }
-      })
-      .catch(err => console.warn("Price fetch failed:", err));
-  });
+const priceCache = {};
+async function fetchRealPrices(productId) {
+  if (priceCache[productId]) return priceCache[productId];
+  try {
+    const res = await fetch(`/store-api/products/${productId}`);
+    const data = await res.json();
+    const price = data?.PriceFormatted || "";
+    priceCache[productId] = price;
+    return price;
+  } catch {
+    return "";
+  }
 }
 
-// Tooltip for swatches
-function enableSwatchTooltips() {
-  const swatches = document.querySelectorAll(".swatch-container .swatch");
+function enhanceProductCards() {
+  const cards = document.querySelectorAll(".product-card");
+  cards.forEach(async card => {
+    if (card.dataset.enhanced === "true") return;
+    card.dataset.enhanced = "true";
 
-  swatches.forEach(swatch => {
-    const name = swatch.getAttribute("title") || swatch.getAttribute("aria-label");
-    if (name) {
-      swatch.setAttribute("data-tooltip", name);
+    const productId = card.id?.match(/\d+/)?.[0];
+    const priceEl = card.querySelector(".product-price");
+
+    if (productId && priceEl) {
+      const price = await fetchRealPrices(productId);
+      if (price) {
+        priceEl.innerHTML = price;
+        priceEl.style.visibility = "visible";
+      }
+    }
+
+    const swatches = card.querySelectorAll(".color-swatch");
+    if (swatches.length > 5) {
+      swatches.forEach((el, i) => { if (i >= 5) el.style.display = "none"; });
     }
   });
 }
 
-window.enhanceProductCards = function () {
-  enhanceProductCards();
-  enableSwatchTooltips();
-};
-
-document.addEventListener("route:changed", () => {
-  setTimeout(() => window.enhanceProductCards(), 500);
-});
+window.enhanceProductCards = enhanceProductCards;
