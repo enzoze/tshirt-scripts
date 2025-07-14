@@ -1,9 +1,21 @@
-/* Main Styles */
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Live Chat</title>
+  
+  <!-- Optional: Add a Google Font for better typography -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  
+
+  <style>
 h1 {
   color: #1a1a1a;
 }
 
-a, a:hover {
+a,
+a:hover {
   color: #aa0101;
 }
 
@@ -11,7 +23,8 @@ a, a:hover {
   background: #aa0101;
 }
 
-p.m14.product-title, h2.r20.flex-child-auto {
+p.m14.product-title,
+h2.r20.flex-child-auto {
   color: #1a1a1a;
 }
 
@@ -34,131 +47,174 @@ mat-form-field.mat-form-field-type-mat-input:focus .mat-form-field-flex {
   -webkit-box-shadow: 0 0 0 1px #aa0101;
   box-shadow: 0 0 0 1px #aa0101;
 }
-
-/* Product Price */
+/* Hide Product Price Everywhere Except the Cart */
 .product-price {
   visibility: hidden;
 }
 
-/* Sidebar Styling */
-.category-list, .m-t-2.r14 {  
-  background-color: white !important;
-  padding: 15px !important;
-  border-radius: 8px !important;
-  border: 1px solid #ddd !important;
-  width: 100% !important;
-  max-width: 220px !important;
-  max-height: 500px !important;
-  overflow-y: auto !important;
-  box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
+
+/* Sidebar Styling for Both Stores */
+.category-list, 
+.m-t-2.r14 {  
+    background-color: white !important;
+    padding: 15px !important;
+    border-radius: 8px !important;
+    border: 1px solid #ddd !important;
+    width: 100% !important;  /* Match the "View All" button width */
+    max-width: 220px !important; /* Ensures it doesn't get too wide */
+    max-height: 500px !important;
+    overflow-y: auto !important;
+    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
 }
 
-.category-list h2, .m-t-2.r14 h2 {
-  font-size: 16px;
-  font-weight: bold;
-  color: #333 !important;
-  padding: 8px 0;
-  border-bottom: 1px solid #ddd;
-  transition: background 0.3s ease-in-out, color 0.3s ease-in-out;
+/* Sidebar Headings */
+.category-list h2, 
+.m-t-2.r14 h2 {
+    font-size: 16px;
+    font-weight: bold;
+    color: #333 !important;
+    padding: 8px 0;
+    border-bottom: 1px solid #ddd;
+      transition: background 0.3s ease-in-out, color 0.3s ease-in-out;
+
 }
 
-.category-list a.body1, .m-t-2.r14 a.body1 {
-  display: flex;
-  align-items: center;
-  padding: 8px;
-  color: #333 !important;
-  font-size: 14px;
-  font-weight: 500;
-  text-decoration: none;
-  transition: background 0.3s ease-in-out, color 0.3s ease-in-out;
-  border-radius: 4px;
-  cursor: pointer;
+/* Sidebar Hover Effects */
+.category-list a.body1, 
+.m-t-2.r14 a.body1 {
+    display: flex;
+    align-items: center;
+    padding: 8px;
+    color: #333 !important;
+    font-size: 14px;
+    font-weight: 500;
+    text-decoration: none;
+    transition: background 0.3s ease-in-out, color 0.3s ease-in-out;
+    border-radius: 4px;
+    cursor: pointer;
 }
 
-.category-list a.body1:hover, .m-t-2.r14 a.body1:hover {
-  background-color: #aa0101 !important;
-  color: white !important;
-  box-shadow: 0px 0px 5px rgba(170, 1, 1, 0.3);
-  transition: background 0.3s ease-in-out, color 0.3s ease-in-out;
+/* Dark Red Hover Effect */
+.category-list a.body1:hover, 
+.m-t-2.r14 a.body1:hover {
+    background-color: #aa0101 !important;
+    color: white !important;
+    box-shadow: 0px 0px 5px rgba(170, 1, 1, 0.3);
+      transition: background 0.3s ease-in-out, color 0.3s ease-in-out;
+
 }
 
-/* View All Button */
+/* View All Button for Both Stores */
 .category-view-all {
-  display: block;
-  background-color: #aa0101 !important;
-  color: white !important;
-  text-align: center;
-  padding: 8px;
-  border-radius: 5px;
-  font-weight: bold;
-  text-decoration: none;
-  margin-top: 10px;
-  width: 100%;
-  max-width: 220px !important;
-  transition: background 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    display: block;
+    background-color: #aa0101 !important;
+    color: white !important;
+    text-align: center;
+    padding: 8px;
+    border-radius: 5px;
+    font-weight: bold;
+    text-decoration: none;
+    margin-top: 10px;
+    width: 100%;
+    max-width: 220px !important; /* Ensure same width as sidebar */
+    transition: background 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
 }
 
 .category-view-all:hover {
-  background-color: #800000 !important;
-  box-shadow: 0px 4px 8px rgba(170, 1, 1, 0.3);
+    background-color: #800000 !important;
+    box-shadow: 0px 4px 8px rgba(170, 1, 1, 0.3);
 }
 
-/* Mega Menu Styles */
-.custom-mega-menu {
-  position: absolute;
-  top: 100px;
-  left: 10px;
-  background: white;
-  padding: 15px 20px;
-  width: 1500px;
-  height: 500px;
+/* Subcategory Styling */
+.category-list .sub-category a,
+.category-list li.m-b-2.ng-star-inserted a {
+    display: flex;
+    align-items: center;
+    padding: 8px;
+    color: #666 !important;
+    font-size: 14px;
+    text-decoration: none;
+    transition: background 0.3s ease-in-out, color 0.3s ease-in-out;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+/* Hover Effect for Subcategories */
+.category-list .sub-category a:hover,
+.category-list li.m-b-2.ng-star-inserted a:hover {
+    background-color: #aa0101 !important;
+    color: white !important;
+    box-shadow: 0px 0px 5px rgba(170, 1, 1, 0.3);
+      transition: background 0.3s ease-in-out, color 0.3s ease-in-out;
+
+}
+
+/* Subcategory Arrow */
+.category-list .sub-category a::before {
+    content: "?";
+    font-size: 12px;
+    color: #aa0101;
+    margin-right: 8px;
+      transition: background 0.3s ease-in-out, color 0.3s ease-in-out;
+
+}
+
+.category-list .sub-category a:hover::before {
+    color: white;
+}
+
+  body {
+      font-family: 'Roboto', sans-serif;
+    }
+    .header-right-col.flex-container.align-middle {
+  display: none !important;
+}
+    .widget-container{position:absolute;top:10px;right:10px;display:flex;align-items:center;gap:15px;background-color:#1a1a1a;padding:10px 15px;border-radius:5px;z-index:9999}
+    .widget-icon{width:35px;height:35px}
+    .widget-link{display:flex;align-items:center;text-decoration:none;color:#fff;font-size:16px;font-weight:bold}
+    .widget-link img{margin-right:8px}
+    .category-list,.m-t-2.r14{background-color:white!important;padding:15px!important;border-radius:8px!important;border:1px solid #ddd!important;width:140%!important;max-width:1000px!important;max-height:900px!important;overflow-y:auto!important;margin-left:-60px!important;box-shadow:0 2px 10px rgba(0,0,0,0.1)}
+    .category-view-all{display:none;background-color:#aa0101!important;color:white!important;text-align:center;padding:8px;border-radius:5px;font-weight:bold;text-decoration:none;margin-top:10px;width:100%;max-width:220px!important;transition:background .3s ease-in-out,box-shadow .3s ease-in-out}
+    .mat-mdc-menu-panel,.category-dropdown-menu.header-dropdown-menu{display:none!important;visibility:hidden!important}
+    .custom-mega-menu{position:absolute;top:100px;left:10px;background:white;padding:15px 20px;width:1500px;height:500px;display:none;z-index:1000;box-shadow:0 4px 6px rgba(0,0,0,0.1);border-top:4px solid darkred}
+    .mega-menu-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+    .mega-column h3{font-size:20px;font-weight:bold;color:darkred;margin-bottom:6px;border-bottom:1px solid lightgray;padding-bottom:4px;text-transform:none}
+    .mega-column a{display:block;text-decoration:none;color:black;font-size:14px;padding:3px 0;transition:background .3s,color .3s}
+    .mega-column a:hover{background:grey;color:white;border-radius:5px}
+    .popular{background:darkred;color:white;font-size:10px;padding:1px 4px;border-radius:5px;margin-left:5px}
+   /* Add this new style for the account mega menu */
+    .account-mega-menu {
+        position: absolute;
+        top: 100px;
+        height: 500px;
+        right: 10px;
+        background: white;
+        padding: 15px 20px;
+        width: 1500px;
+        display: none;
+        z-index: 1000;
+        box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        border-top: 4px solid darkred;
+    }      /* Add these new styles for mobile filter */
+    .mobile-filter-toggle {
   display: none;
-  z-index: 1000;
-  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-  border-top: 4px solid darkred;
-}
-
-.mega-menu-grid {
-  display: grid;
-  grid-template-columns: repeat(4,1fr);
-  gap: 20px;
-}
-
-.mega-column h3 {
-  font-size: 20px;
-  font-weight: bold;
-  color: darkred;
-  margin-bottom: 6px;
-  border-bottom: 1px solid lightgray;
-  padding-bottom: 4px;
-  text-transform: none;
-}
-
-.mega-column a {
-  display: block;
-  text-decoration: none;
-  color: black;
-  font-size: 14px;
-  padding: 3px 0;
-  transition: background .3s,color .3s;
-}
-
-.mega-column a:hover {
-  background: grey;
-  color: white;
-  border-radius: 5px;
-}
-
-.popular {
+  /* Remove fixed positioning */
+  position: static;
+  /* Remove bottom/right positioning */
   background: darkred;
   color: white;
-  font-size: 10px;
-  padding: 1px 4px;
-  border-radius: 5px;
-  margin-left: 5px;
+  width: auto; /* Change from fixed width */
+  height: auto; /* Change from fixed height */
+  padding: 10px 15px; /* Add padding instead of fixed dimensions */
+  border-radius: 5px; /* Change from circle to rectangle */
+  border: none;
+  font-size: 16px;
+  box-shadow: none; /* Remove shadow if you want it flat */
+  z-index: auto;
+  cursor: pointer;
+  margin: 0 10px; /* Add some margin */
 }
 
-/* Mobile Styles */
 @media (max-width: 1023px) {
   .mobile-filter-toggle {
     display: flex;
@@ -166,6 +222,7 @@ mat-form-field.mat-form-field-type-mat-input:focus .mat-form-field-flex {
     justify-content: center;
   }
   
+  /* Remove the transform animation for the sidebar */
   .mobile-filter-sidebar {
     transform: none;
     transition: none;
@@ -174,9 +231,7 @@ mat-form-field.mat-form-field-type-mat-input:focus .mat-form-field-flex {
   .mobile-filter-sidebar.active {
     transform: none;
   }
-}
-
-@media (max-width: 767px) {
+} @media (max-width: 767px) {
   .product-card .product-image-container {
     height: 200px !important;
     padding-bottom: 0 !important;
@@ -189,186 +244,2760 @@ mat-form-field.mat-form-field-type-mat-input:focus .mat-form-field-flex {
     height: auto !important;
   }
 }
+  
+  </style>
+</head>
+<body>
+<script>
+  
+  // ===== ADD THIS AT THE TOP OF YOUR SCRIPT SECTION =====
+// Track menu state
+const menuState = {
+    megaMenuVisible: false,
+    accountMenuVisible: false
+};
 
-/* Product Card Enhancements */
-.product-card .product-image-container,
-.product-thumb .product-image-container,
-.product-tile .product-image-container,
-.product-list-item .product-image-container {
-  position: relative;
-  width: 100%;
-  padding-bottom: 100%;
-  background: #ffffff;
-  overflow: hidden;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 0 !important;
-  border: none !important;
+// Save menu state
+function saveMenuState() {
+    sessionStorage.setItem('menuState', JSON.stringify(menuState));
 }
 
-.product-card img, 
-.product-thumb img, 
-.product-tile img, 
-.product-list-item img {
-  position: absolute;
-  max-width: 85%;
-  max-height: 85%;
-  object-fit: contain;
+// Load menu state
+function loadMenuState() {
+    const savedState = sessionStorage.getItem('menuState');
+    if (savedState) {
+        Object.assign(menuState, JSON.parse(savedState));
+    }
+} 
+
+function getFromLocalCache(key) {
+    try {
+        const item = localStorage.getItem(key);
+        return item ? JSON.parse(item) : null;
+    } catch {
+        return null;
+    }
 }
 
-.product-card {
-  width: 100% !important;
-  min-height: 380px !important;
-  position: relative !important;
+function saveToLocalCache(key, value) {
+    try {
+        localStorage.setItem(key, JSON.stringify(value));
+    } catch (e) {
+        console.warn('LocalStorage full or blocked:', e);
+    }
 }
 
-.custom-product-enhancements {
-  margin-top: 12px !important;
-  padding: 0 8px !important;
-  font-family: 'Segoe UI', Tahoma, sans-serif !important;
+// ========================================
+// PERSISTENT MEGA MENU SOLUTION
+// ========================================
+(function() {
+    // Configuration
+    const config = {
+        maxCacheItems: 50,
+        cacheExpiryDays: 1,
+        cachePrefix: 'product-',
+        defaultQuantity: 25,
+        quantityTiers: [1, 10, 25, 50, 100],
+        printColors: 1,
+        maxConcurrentRequests: 3,
+        requestDelay: 300
+    };
+
+   // 1. Inject CSS
+    const style = document.createElement('style');
+    style.textContent = `
+        /* Product image containers */
+        .product-card .product-image-container,
+        .product-thumb .product-image-container,
+        .product-tile .product-image-container,
+        .product-list-item .product-image-container {
+            position: relative;
+            width: 100%;
+            padding-bottom: 100%; /* Perfect square */
+            background: #ffffff; /* Pure white */
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 0 !important; /* Remove any rounded corners */
+            border: none !important; /* Remove any borders */
+        }
+        
+        .product-card img, 
+        .product-thumb img, 
+        .product-tile img, 
+        .product-list-item img {
+            position: absolute;
+            max-width: 85%;
+            max-height: 85%;
+            object-fit: contain;
+        }
+
+        /* Product card styling */
+        .product-card {
+            width: ${config.cardWidth} !important;
+            min-height: 380px !important;
+            position: relative !important;
+        }
+        
+        /* [Rest of your existing CSS styles...] */
+        .custom-product-enhancements {
+            margin-top: 12px !important;
+            padding: 0 8px !important;
+            font-family: 'Segoe UI', Tahoma, sans-serif !important;
+        }
+        .custom-sizes {
+            font-size: 13px !important;
+            color: #666 !important;
+            margin-bottom: 10px !important;
+            font-weight: 600 !important;
+        }
+        .custom-price-container {
+            margin-bottom: 8px !important;
+            position: relative !important;
+        }
+        .custom-main-price {
+            font-weight: 700 !important;
+            font-size: 16px !important;
+            color: #000 !important;
+        }
+        .custom-pricelist-link {
+            font-size: 12px !important;
+            color: #0066cc !important;
+            text-decoration: underline !important;
+            cursor: pointer !important;
+            margin-top: 4px !important;
+            display: inline-block !important;
+        }
+        .custom-price-tooltip {
+            display: none;
+            position: absolute !important;
+            left: 0 !important;
+            bottom: 30px !important;
+            background: white !important;
+            border: 1px solid #ddd !important;
+            padding: 10px !important;
+            border-radius: 4px !important;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1) !important;
+            z-index: 1000 !important;
+            width: 180px !important;
+        }
+        .custom-price-tooltip.show {
+            display: block !important;
+        }
+        .price-table {
+            width: 100% !important;
+            border-collapse: collapse !important;
+            font-size: 12px !important;
+        }
+        .price-table th, .price-table td {
+            padding: 4px 6px !important;
+            text-align: left !important;
+            border-bottom: 1px solid #eee !important;
+        }
+        .price-table th {
+            background: #f5f5f5 !important;
+            font-weight: 600 !important;
+        }
+        .price-table tr:last-child td {
+            border-bottom: none !important;
+        }
+        .price-table tr.highlight-row td {
+            background: #fff8e1 !important;
+            font-weight: 600 !important;
+        }
+        .color-swatch {
+            border-radius: 50% !important;
+            border: 1px solid #e0e0e0 !important;
+            margin-right: 5px !important;
+            width: 20px !important;
+            height: 20px !important;
+        }
+        .color-wrap-control {
+            display: none !important;
+        }
+        .swatch-wrap {
+            overflow: visible !important;
+            white-space: normal !important;
+        }
+        .custom-colors-count {
+            font-size: 11px !important;
+            color: #666 !important;
+            margin-left: 5px !important;
+            font-weight: 600 !important;
+        }
+    `;
+    document.head.appendChild(style);
+
+
+    // 2. Request Throttling System
+    const requestQueue = [];
+    let activeRequests = 0;
+    const priceCache = new Map();
+    const productDataCache = new Map();
+
+    async function processQueue() {
+        if (activeRequests >= config.maxConcurrentRequests || requestQueue.length === 0) return;
+        
+        activeRequests++;
+        const { url, options, resolve, reject } = requestQueue.shift();
+        
+        try {
+            const response = await fetch(url, options);
+            if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
+            const data = await response.json();
+            resolve(data);
+        } catch (error) {
+            reject(error);
+        } finally {
+            activeRequests--;
+            setTimeout(processQueue, config.requestDelay);
+        }
+    }
+
+    function throttledFetch(url, options = {}) {
+        return new Promise((resolve, reject) => {
+            requestQueue.push({ url, options, resolve, reject });
+            processQueue();
+        });
+    }
+
+    // 3. API Price Fetching with localStorage
+async function fetchRealPrices(productId, styleId, sizeId) {
+    const priceResults = {};
+
+    try {
+        await Promise.all(config.quantityTiers.map(async quantity => {
+            const cacheKey = `price-${productId}-${styleId}-${sizeId}-${quantity}`;
+
+            // ✅ Check in-memory cache
+            if (priceCache.has(cacheKey)) {
+                priceResults[quantity] = priceCache.get(cacheKey);
+                return;
+            }
+
+            // ✅ Check localStorage
+            const localStored = localStorage.getItem(cacheKey);
+            if (localStored) {
+                priceResults[quantity] = localStored;
+                priceCache.set(cacheKey, localStored); // also update memory
+                return;
+            }
+
+            // Build quote item
+            const quoteItems = [{
+                ProductId: productId,
+                ProductStyleId: styleId,
+                ProductStyleSizeId: sizeId,
+                Quantity: quantity,
+                Sides: [{
+                    SideId: "front",
+                    NumColors: config.printColors,
+                    IsFullColor: false,
+                    ArtIdentifier: "front"
+                }]
+            }];
+
+            try {
+                const response = await throttledFetch(
+                    'https://www.tshirtsource.com/TShirt_source/Api2/GetQuote',
+                    {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify({
+                            QuoteItems: JSON.stringify(quoteItems),
+                            Format: 'JSON'
+                        })
+                    }
+                );
+
+                if (response?.OK && response.Data?.length > 0) {
+                    const priceObj = response.Data[0];
+                    const totalPrice = priceObj.ProductAndPrintingTotalOriginal ||
+                                     priceObj.ProductAndPrintingTotal || 0;
+                    const unitPrice = (totalPrice / quantity).toFixed(2);
+
+                    // ✅ Save to memory and localStorage
+                    priceCache.set(cacheKey, unitPrice);
+                    localStorage.setItem(cacheKey, unitPrice);
+
+                    priceResults[quantity] = unitPrice;
+                }
+            } catch (error) {
+                console.warn('Fetch failed for quantity', quantity, error);
+            }
+        }));
+
+        const uniquePrices = new Set(Object.values(priceResults));
+        if (uniquePrices.size < 3) {
+            console.warn('Less than 3 unique prices retrieved');
+        }
+
+        return priceResults;
+    } catch (error) {
+        console.error('Error fetching real prices:', error);
+        return null;
+    }
 }
 
-.custom-sizes {
-  font-size: 13px !important;
-  color: #666 !important;
-  margin-bottom: 10px !important;
-  font-weight: 600 !important;
+
+   let isEnhancing = false;
+let debounceTimer;
+
+// Updated debounce delay
+const ENHANCE_DEBOUNCE_DELAY = 1200;
+
+async function enhanceProductCards() {
+    if (isEnhancing) return;
+    isEnhancing = true;
+
+    const cards = Array.from(document.querySelectorAll('.product-card:not([data-enhanced])'));
+    for (const card of cards.slice(0, 5)) { // Only enhance first 5 new cards
+        await enhanceSingleCard(card);
+        await new Promise(resolve => setTimeout(resolve, 100)); // Stagger per card
+    }
+
+    isEnhancing = false;
 }
 
-.custom-price-container {
-  margin-bottom: 8px !important;
-  position: relative !important;
+// Unified observer with improved debounce handling
+const productObserver = new MutationObserver(() => {
+    clearTimeout(debounceTimer);
+    debounceTimer = setTimeout(() => {
+        enhanceProductCards();
+    }, ENHANCE_DEBOUNCE_DELAY);
+});
+
+// Scope observation to product grid container only
+function observeProductGrid() {
+    const productGrid = document.querySelector('.products-container') || 
+                        document.querySelector('.grid-x.grid-padding-x.align-left') || 
+                        document.body;
+
+    productObserver.observe(productGrid, {
+        childList: true,
+        subtree: true
+    });
+
+    // Run once initially
+    enhanceProductCards();
+}
+async function enhanceSingleCard(card) {
+    try {
+        card.dataset.enhanced = 'processing';
+        const infoContainer = card.querySelector('.product-info');
+        if (!infoContainer) return;
+
+        const productId = card.id.match(/\d+/)?.[0];
+        if (!productId) return;
+
+        // === Ensure wrapper around product card ===
+        let wrapper = card.parentElement;
+        if (!wrapper.classList.contains('enhanced-product-wrapper')) {
+            const wrapperDiv = document.createElement('div');
+            wrapperDiv.className = 'enhanced-product-wrapper';
+            wrapperDiv.style.marginBottom = '20px';
+            card.replaceWith(wrapperDiv);
+            wrapperDiv.appendChild(card);
+            wrapper = wrapperDiv;
+        }
+
+        // === Create enhancement container inside the card ===
+        const enhancements = document.createElement('div');
+        enhancements.className = 'custom-product-enhancements';
+
+        // === Fetch product data with caching ===
+        let productData;
+        if (productDataCache.has(productId)) {
+            productData = productDataCache.get(productId);
+        } else {
+            const response = await throttledFetch(
+                `https://cdn.inksoft.com/TShirt_source/Api2/GetProduct?ProductID=${productId}`
+            );
+            productData = response?.Data;
+            if (productData) productDataCache.set(productId, productData);
+        }
+
+        // === SIZES ===
+        const styles = productData?.Styles || [];
+        const sizes = styles[0]?.Sizes || [];
+        const styleId = styles[0]?.ID;
+        const sizeId = sizes[0]?.ID;
+
+        const sizesElement = document.createElement('div');
+        sizesElement.className = 'custom-sizes';
+        sizesElement.textContent = getSizeRange(sizes);
+        enhancements.appendChild(sizesElement);
+
+        // === Inject sizes inside card ===
+        infoContainer.appendChild(enhancements);
+
+        // === Create external price button ===
+        const priceButton = document.createElement('button');
+        priceButton.textContent = 'View Price List';
+        priceButton.className = 'view-price-button';
+        priceButton.style.cssText = `
+            background-color: #aa0101;
+            color: white;
+            border: none;
+            padding: 8px 12px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: bold;
+            margin-top: 10px;
+        `;
+
+        // === Create hidden price table ===
+        const priceContainer = document.createElement('div');
+        priceContainer.className = 'custom-price-table-container';
+        priceContainer.style.display = 'none';
+        priceContainer.style.marginTop = '12px';
+        priceContainer.style.padding = '10px';
+        priceContainer.style.border = '1px solid #ddd';
+        priceContainer.style.borderRadius = '6px';
+        priceContainer.style.backgroundColor = '#fff';
+        priceContainer.style.boxShadow = '0 2px 8px rgba(0, 0, 0, 0.1)';
+        priceContainer.innerHTML = `
+            <div style="font-weight: 600; font-size: 13px; margin-bottom: 8px; text-align: center;">
+                For a 1 color - 1 sided design
+            </div>
+            <table class="price-table" style="width: 100%; font-size: 14px;">
+                <thead><tr><th>Qty</th><th>Each</th></tr></thead>
+                <tbody>
+                    ${config.quantityTiers.map(qty => `
+                        <tr ${qty === config.defaultQuantity ? 'style="background:#fff8e1;font-weight:bold;"' : ''}>
+                            <td>${qty}</td>
+                            <td>Loading...</td>
+                        </tr>
+                    `).join('')}
+                </tbody>
+            </table>
+        `;
+
+        // === On Click: Fetch prices & show table ===
+        priceButton.addEventListener('click', async () => {
+            priceButton.disabled = true;
+            priceButton.textContent = 'Loading...';
+
+            try {
+                const prices = await fetchRealPrices(productId, styleId, sizeId);
+                if (prices) {
+                    const rows = priceContainer.querySelectorAll('tbody tr');
+                    config.quantityTiers.forEach((qty, i) => {
+                        const cells = rows[i].querySelectorAll('td');
+                        if (cells.length >= 2) {
+                            cells[1].textContent = prices[qty] ? `$${prices[qty]}` : 'N/A';
+                        }
+                    });
+                    priceContainer.style.display = 'block';
+                    priceButton.style.display = 'none';
+                } else {
+                    priceContainer.innerHTML = `<div style="color:red;">Failed to load prices.</div>`;
+                    priceContainer.style.display = 'block';
+                    priceButton.disabled = false;
+                    priceButton.textContent = 'Retry';
+                }
+            } catch (err) {
+                priceContainer.innerHTML = `<div style="color:red;">Something went wrong.</div>`;
+                priceContainer.style.display = 'block';
+                priceButton.disabled = false;
+                priceButton.textContent = 'Retry';
+            }
+        });
+
+        // === Append button + price table below the card ===
+        wrapper.appendChild(priceButton);
+        wrapper.appendChild(priceContainer);
+
+        // === Color swatches ===
+        const swatches = card.querySelectorAll('.color-swatch');
+        if (swatches.length > 5) {
+            const remaining = swatches.length - 5;
+            const colorsCount = document.createElement('span');
+            colorsCount.className = 'custom-colors-count';
+            colorsCount.textContent = `+${remaining} more`;
+
+            const swatchContainer = card.querySelector('.swatch-wrap');
+            if (swatchContainer) {
+                swatchContainer.appendChild(colorsCount);
+            }
+
+            swatches.forEach((swatch, index) => {
+                if (index >= 5) swatch.style.display = 'none';
+            });
+        }
+
+        // === Remove arrows ===
+        card.querySelectorAll('.color-wrap-control').forEach(el => el.remove());
+
+        card.dataset.enhanced = 'true';
+    } catch (error) {
+        console.error('Error enhancing product card:', error);
+        card.dataset.enhanced = 'error';
+    }
 }
 
-.custom-main-price {
-  font-weight: 700 !important;
-  font-size: 16px !important;
-  color: #000 !important;
+
+
+    function getSizeRange(sizes) {
+        if (!sizes || sizes.length === 0) return 'Sizes loading...';
+        const sizeOrder = ['XS', 'S', 'M', 'L', 'XL', '2XL', '3XL', '4XL', '5XL'];
+        const sorted = [...sizes].sort((a, b) => sizeOrder.indexOf(a.Name) - sizeOrder.indexOf(b.Name));
+        return `Sizes: ${sorted[0].Name}-${sorted[sorted.length - 1].Name}`;
+    }
+
+    // 5. Initialize
+    const observer = new MutationObserver(() => {
+        clearTimeout(debounceTimer);
+        debounceTimer = setTimeout(enhanceProductCards, 500);
+    });
+
+    observer.observe(document.body, { childList: true, subtree: true });
+    enhanceProductCards(); // Initial run
+  
+
+})();
+  
+  
+// ===== REPLACE YOUR EXISTING initializeMegaMenu() WITH THIS =====
+function initializeMegaMenu() {
+    // Skip if already exists
+    if (document.querySelector('.custom-mega-menu')) return;
+    
+    const productsMenu = document.querySelector('a[href*="/shop/products/all"], a[href*="/products/all"]');
+    if (!productsMenu) return;
+
+    const megaMenu = document.createElement("div");
+    megaMenu.classList.add("custom-mega-menu");
+    megaMenu.innerHTML = `
+        <div class="mega-menu-grid">
+            <div class="mega-column">
+                <h3>T-Shirts</h3>
+                <a href="/tshirt_source/shop/products/t_shirts/long_sleeve">Long Sleeve<span class="popular">Popular</span></a>
+                <a href="/tshirt_source/shop/products/t_shirts/short_sleeve">Short Sleeve</a>
+            </div>
+            <div class="mega-column">
+                <h3>Fleece</h3>
+                <a href="/tshirt_source/shop/products/fleece/hoodies">Hoodies</a>
+                <a href="/tshirt_source/shop/products/fleece/crewneck_sweatshirt">Crewneck Sweatshirt</a>
+                <h3>Hats</h3>
+                <a href="/tshirt_source/shop/products/hats/trucker_hats">Trucker hat</a>
+                <a href="/tshirt_source/shop/products/hats/dad_hats">Dad hat</a>
+                <a href="/tshirt_source/shop/products/hats/beanies">Beanies<span class="popular">Popular</span></a>
+            </div>
+            <div class="mega-column">
+                <h3>Jackets</h3>
+                <a href="/tshirt_source/shop/products/jackets/soft_shell">Soft Shell</a>
+                <a href="/tshirt_source/shop/products/jackets/windbreakers">Windbreakers</a>
+            </div>
+            <div class="mega-column">
+                <h3>Polos</h3>
+                <a href="/tshirt_source/shop/products/polos/unisex">Unisex</a>
+                <a href="/tshirt_source/shop/products/polos/women">Women</a>
+            </div>
+        </div>`;
+    
+    productsMenu.parentNode.appendChild(megaMenu);
+    
+    // Apply saved state
+    if (menuState.megaMenuVisible) {
+        megaMenu.style.display = "block";
+    }
+    
+    // Add hover events
+    productsMenu.addEventListener('mouseenter', () => {
+        megaMenu.style.display = "block";
+        menuState.megaMenuVisible = true;
+        saveMenuState();
+    });
+    
+    megaMenu.addEventListener('mouseenter', () => {
+        megaMenu.style.display = "block";
+        menuState.megaMenuVisible = true;
+        saveMenuState();
+    });
+    
+    megaMenu.addEventListener('mouseleave', () => {
+        megaMenu.style.display = "none";
+        menuState.megaMenuVisible = false;
+        saveMenuState();
+    });
 }
 
-.custom-pricelist-link {
-  font-size: 12px !important;
-  color: #0066cc !important;
-  text-decoration: underline !important;
-  cursor: pointer !important;
-  margin-top: 4px !important;
-  display: inline-block !important;
+// Watch for navigation changes and reinitialize
+const menuObserver = new MutationObserver(() => {
+    if (!document.querySelector('.custom-mega-menu')) {
+        initializeMegaMenu();
+    }
+});
+
+menuObserver.observe(document.body, {
+    childList: true,
+    subtree: true
+});
+
+// ========================================
+// IMPROVED FILTER PERSISTENCE SYSTEM
+// ========================================
+  // Define our 7 base colors and their RGB ranges
+const baseColors = {
+    "Red": { min: [150, 0, 0], max: [255, 100, 100] },
+    "Blue": { min: [0, 0, 150], max: [100, 100, 255] },
+    "Green": { min: [0, 150, 0], max: [100, 255, 100] },
+    "Yellow": { min: [200, 150, 0], max: [255, 255, 100] },
+    "Orange": { min: [200, 100, 0], max: [255, 165, 50] },
+    "Purple": { min: [100, 0, 100], max: [200, 50, 200] },
+    "Pink": { min: [255, 150, 150], max: [255, 200, 200] },
+    "Black": { min: [0, 0, 0], max: [50, 50, 50] },
+    "White": { min: [200, 200, 200], max: [255, 255, 255] },
+    "Gray": { min: [100, 100, 100], max: [200, 200, 200] },
+    "Brown": { min: [100, 50, 0], max: [150, 100, 50] },
+    "Teal": { min: [0, 100, 100], max: [50, 150, 150] },
+    "Navy": { min: [0, 0, 80], max: [50, 50, 150] }
+};
+
+
+// Store filter state globally
+const filterState = {
+    type: [],
+    price: [],
+    color: [],
+    material: [],
+    size: [],
+    fit: [],
+    weight: []
+};
+
+// Track if we're currently applying filters to prevent loops
+let isApplyingFilters = false;
+
+// Save filter state to sessionStorage
+function saveFilterState() {
+    sessionStorage.setItem('filterState', JSON.stringify(filterState));
 }
 
-.custom-price-tooltip {
-  display: none;
-  position: absolute !important;
-  left: 0 !important;
-  bottom: 30px !important;
-  background: white !important;
-  border: 1px solid #ddd !important;
-  padding: 10px !important;
-  border-radius: 4px !important;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1) !important;
-  z-index: 1000 !important;
-  width: 180px !important;
+// Load filter state from sessionStorage
+function loadFilterState() {
+    const savedState = sessionStorage.getItem('filterState');
+    if (savedState) {
+        Object.assign(filterState, JSON.parse(savedState));
+    }
 }
 
-.custom-price-tooltip.show {
-  display: block !important;
+// Apply saved filter state to UI
+function applySavedFilterState() {
+    if (isApplyingFilters) return;
+    isApplyingFilters = true;
+    
+    try {
+        // Apply checkbox states
+        for (const [filterType, values] of Object.entries(filterState)) {
+            const selector = filterType === 'color' ? 
+                `.filter-section h4:contains("Color")` :
+                `.${filterType}-filter input[type="checkbox"], .${filterType}-enhanced-filter input[type="checkbox"]`;
+            
+            document.querySelectorAll(selector).forEach(checkbox => {
+                checkbox.checked = values.includes(checkbox.value);
+            });
+        }
+        
+        // Run all filters
+        runCombinedFilters();
+    } catch (e) {
+    } finally {
+        isApplyingFilters = false;
+    }
 }
 
-.price-table {
-  width: 100% !important;
-  border-collapse: collapse !important;
-  font-size: 12px !important;
+// Update filter state when checkboxes change
+function updateFilterState(filterType, value, isChecked) {
+    if (isApplyingFilters) return;
+    
+    if (isChecked) {
+        if (!filterState[filterType].includes(value)) {
+            filterState[filterType].push(value);
+        }
+    } else {
+        filterState[filterType] = filterState[filterType].filter(v => v !== value);
+    }
+    
+    saveFilterState();
 }
 
-.price-table th, .price-table td {
-  padding: 4px 6px !important;
-  text-align: left !important;
-  border-bottom: 1px solid #eee !important;
+// ========================================
+// ENHANCED FILTER FUNCTIONS
+// ========================================
+const FIXED_SIZES = ["Youth", "XS", "S", "M", "L", "XL", "2XL", "3XL", "4XL", "5XL"];
+const FIXED_MATERIALS = ["Cotton", "Cotton/Polyester", "Polyester", "Nylon", "Others"];
+const FIXED_FITS = ["Relaxed", "Slim", "OverSize", "Loose", "Athletic", "Others"];
+const FIXED_WEIGHTS = ["Light", "Medium", "Heavy"];
+const FIXED_TYPES = ["Men", "Women", "Kid", "Youth"];
+const FIXED_PRICES = ["$", "$$", "$$$"];
+const FIXED_COLORS = [
+    "Red", "Blue", "Green", "Yellow", "Orange", "Purple", "Pink",
+    "Black", "White", "Gray", "Brown", "Teal", "Navy"
+];
+const getWeightCategory = (oz) => {
+    if (oz < 6) return "Light";
+    if (oz <= 7) return "Medium";
+    return "Heavy";
+};
+
+const normalizeMaterial = (text) => {
+    const t = text.toLowerCase();
+    if (t.includes('cotton') && t.includes('polyester')) return 'Cotton/Polyester';
+    if (t.includes('cotton')) return 'Cotton';
+    if (t.includes('polyester')) return 'Polyester';
+    if (t.includes('nylon')) return 'Nylon';
+    return 'Others';
+};
+
+const extractFit = (text) => {
+    const fitsFound = [];
+    const lowerText = text.toLowerCase();
+
+    for (const fit of FIXED_FITS) {
+        if (fit === "Others") continue;
+        if (lowerText.includes(fit.toLowerCase())) fitsFound.push(fit);
+    }
+
+    if (fitsFound.length === 0) fitsFound.push("Others");
+    return [...new Set(fitsFound)];
+};
+
+const waitForCards = () =>
+    new Promise((res) => {
+        const check = () => {
+            const cards = document.querySelectorAll('[id^="productCard-"]');
+            if (cards.length) res(cards);
+            else setTimeout(check, 1000);
+        };
+        check();
+    });
+  
+function buildEnhancedFilters() {
+    const sidebar = document.querySelector('.category-list.m-t-2.r14');
+    if (!sidebar) return;
+
+    // Add CSS for transitions (only once)
+    const style = document.createElement('style');
+    style.textContent = `
+        .enhanced-filter .filter-content {
+            overflow: hidden;
+            transition: 
+                max-height 0.9s ease-out,  /* Slower & smoother when expanding */
+                opacity 0.9s ease-out,
+                padding-top 0.9s ease;
+            max-height: 1000px; /* Start expanded */
+            opacity: 1;
+        }
+        .enhanced-filter .filter-content.collapsed {
+            max-height: 0;
+            opacity: 0;
+            padding-top: 0 !important;
+            transition: 
+                max-height 0.7s ease-in,  /* Faster when collapsing */
+                opacity 0.7s ease-in,
+                padding-top 0.7s ease;
+        }
+    `;
+    document.head.appendChild(style);
+
+    const existingFilterTitles = [...sidebar.querySelectorAll('.filter-section h4')].map(h4 => h4.textContent);
+    
+    const addEnhancedFilter = (title, options, key) => {
+        if (existingFilterTitles.some(t => t.includes(title.trim()))) return;
+        
+        if (key === 'color') {
+            createColorFilter();
+            return;
+        }
+        
+        const section = document.createElement('div');
+        section.className = 'filter-section enhanced-filter';
+        section.style.marginBottom = '20px';
+
+        const h4 = document.createElement('h4');
+        h4.textContent = title;
+        h4.style.cssText = 'font-size:16px;font-weight:bold;margin-bottom:8px;border-bottom:1px solid #ddd;padding-bottom:5px;display:flex;justify-content:space-between;align-items:center;cursor:pointer;';
+        
+        const toggleSpan = document.createElement('span');
+        toggleSpan.textContent = '-'; // Starts as "-" because it's open by default
+        toggleSpan.style.cssText = 'float:right;cursor:pointer;font-size:18px;';
+        h4.appendChild(toggleSpan);
+
+        const wrapper = document.createElement('div');
+        wrapper.className = `filter-content ${key}-enhanced-filter`;
+        wrapper.style.paddingTop = '10px'; // Padding animates smoothly when collapsing
+
+        options.forEach(opt => {
+            const label = document.createElement('label');
+            label.style.cssText = 'display:flex;gap:10px;font-size:16px;cursor:pointer;line-height:22px;margin-bottom:8px;';
+
+            const cb = document.createElement('input');
+            cb.type = 'checkbox';
+            cb.value = opt;
+            cb.style.cssText = 'width:20px;height:20px;cursor:pointer;';
+
+            cb.addEventListener('change', (e) => {
+                updateFilterState(key, opt, e.target.checked);
+                runCombinedFilters();
+            });
+
+            if (filterState[key] && filterState[key].includes(opt)) {
+                cb.checked = true;
+            }
+
+            label.appendChild(cb);
+            label.appendChild(document.createTextNode(opt));
+            wrapper.appendChild(label);
+        });
+
+        h4.addEventListener('click', () => {
+            const isCollapsed = wrapper.classList.contains('collapsed');
+            wrapper.classList.toggle('collapsed', !isCollapsed);
+            toggleSpan.textContent = isCollapsed ? '-' : '+'; // Toggle between - and +
+        });
+
+        section.appendChild(h4);
+        section.appendChild(wrapper);
+        sidebar.appendChild(section);
+    };
+
+    // Add all fixed filters
+    addEnhancedFilter('Size', FIXED_SIZES, 'size');
+    addEnhancedFilter('Price', [ '$', '$$' , '$$$' ], 'price');
+    addEnhancedFilter('Type', FIXED_TYPES, 'type');
+    addEnhancedFilter('Fit', FIXED_FITS, 'fit');
+    addEnhancedFilter('Material', FIXED_MATERIALS, 'material');
+    addEnhancedFilter('Weight', FIXED_WEIGHTS, 'weight');
+    
+    createColorFilter();
+}
+ 
+function getEnhancedChecked(key) {
+    return [...document.querySelectorAll(`.${key}-enhanced-filter input:checked`)].map(cb => cb.value.toLowerCase());
 }
 
-.price-table th {
-  background: #f5f5f5 !important;
-  font-weight: 600 !important;
+// NEW FUNCTION: Reorder visible products to top
+function reorderVisibleProducts() {
+    const productsContainer = document.querySelector('.products-container') || document.querySelector('.grid-x.grid-padding-x.align-left');
+    if (!productsContainer) return;
+
+    const cards = Array.from(document.querySelectorAll('.product-card'));
+    cards.forEach(card => {
+        if (card.style.display !== 'none') {
+            card.classList.add('shift-up');
+            productsContainer.appendChild(card); // Move visible cards to end (which puts them first in flex)
+        } else {
+            card.classList.remove('shift-up');
+        }
+    });
 }
 
-.price-table tr:last-child td {
-  border-bottom: none !important;
+function runCombinedFilters() {
+    if (isApplyingFilters) return;
+    
+    const products = document.querySelectorAll('[id^="productCard-"]');
+    if (products.length === 0) {
+        setTimeout(runCombinedFilters, 500);
+        return;
+    }
+    isApplyingFilters = true;
+    
+    try {
+        // Get all current filter selections
+        const selected = {
+            size: getEnhancedChecked('size'),
+            material: getEnhancedChecked('material'),
+            weight: getEnhancedChecked('weight'),
+            fit: getEnhancedChecked('fit'),
+            type: getEnhancedChecked('type'),
+            price: getEnhancedChecked('price'),
+            color: filterState.color || []
+        };
+
+        // Filter products
+        products.forEach(card => {
+            const cardType = card.getAttribute('data-type') || 'men';
+            const cardPrice = parseFloat(card.getAttribute('data-price')) || 0;
+            const cardSizes = (card.getAttribute('data-sizes') || '').toLowerCase();
+            const cardMaterial = (card.getAttribute('data-material') || '').toLowerCase();
+            const cardWeight = (card.getAttribute('data-weight') || '').toLowerCase();
+            const cardFit = (card.getAttribute('data-fit') || '').toLowerCase();
+            
+            // Check TYPE filter
+            const matchesType = selected.type.length === 0 || 
+                               selected.type.includes(cardType);
+            
+            // Improved PRICE filter - check both exact price and range
+            const matchesPrice = selected.price.length === 0 || 
+                                selected.price.some(p => {
+                                    if (p === '$') return cardPrice > 0 && cardPrice <= 10;
+                                    if (p === '$$') return cardPrice > 10 && cardPrice <= 29;
+                                    if (p === '$$$') return cardPrice >= 30;
+                                    // Also check the pre-calculated range
+                                    return p === cardPriceRange;
+                                });
+            
+            // Check COLOR filter
+            let matchesColor = true;
+            if (selected.color.length > 0) {
+                const colorSwatches = card.querySelectorAll('.swatch-wrap .color-swatch');
+                matchesColor = Array.from(colorSwatches).some(swatch => {
+                    const bgColor = window.getComputedStyle(swatch).backgroundColor;
+                    if (!bgColor) return false;
+                    
+                    const rgbMatch = bgColor.match(/\d+/g);
+                    if (!rgbMatch || rgbMatch.length < 3) return false;
+                    
+                    const [r, g, b] = rgbMatch.map(Number);
+                    
+                    return selected.color.some(colorName => {
+                        const colorRange = baseColors[colorName];
+                        if (!colorRange) return false;
+                        
+                        return r >= colorRange.min[0] && r <= colorRange.max[0] &&
+                               g >= colorRange.min[1] && g <= colorRange.max[1] &&
+                               b >= colorRange.min[2] && b <= colorRange.max[2];
+                    });
+                });
+            }
+            
+            // Check other filters
+            const matchesOtherFilters =
+                (selected.size.length === 0 || selected.size.some(s => cardSizes.includes(s))) &&
+                (selected.material.length === 0 || selected.material.includes(cardMaterial)) &&
+                (selected.weight.length === 0 || selected.weight.includes(cardWeight)) &&
+                (selected.fit.length === 0 || selected.fit.some(f => cardFit.includes(f)));
+            
+            card.style.display = (matchesType && matchesPrice && matchesColor && matchesOtherFilters) ? 'block' : 'none';
+        });
+
+             // Mobile-specific adjustments
+        if (window.innerWidth < 768) {
+            adjustMobileProductLayout();
+        }
+        reorderVisibleProducts();
+    } catch (e) {
+    } finally {
+        isApplyingFilters = false;
+    }
+} 
+
+function adjustMobileProductLayout() {
+    const productsContainer = document.querySelector('.products-container') || 
+                            document.querySelector('.grid-x.grid-padding-x.align-left');
+    
+    if (!productsContainer) return;
+    
+    // Reset any grid styles that might be affecting mobile view
+    productsContainer.style.display = 'block';
+    productsContainer.style.flexWrap = 'nowrap';
+    productsContainer.style.flexDirection = 'column';
+    
+    // Adjust individual product cards
+    const cards = document.querySelectorAll('.product-card');
+    cards.forEach(card => {
+        if (card.style.display !== 'none') {
+            card.style.width = '100%';
+            card.style.marginBottom = '20px';
+            card.style.flex = 'none';
+            
+            // Ensure images are properly sized
+            const imgContainer = card.querySelector('.product-image-container');
+            if (imgContainer) {
+                imgContainer.style.height = 'auto';
+                imgContainer.style.paddingBottom = '100%';
+                imgContainer.style.position = 'relative';
+            }
+            
+            const img = card.querySelector('.product-image');
+            if (img) {
+                img.style.position = 'absolute';
+                img.style.top = '0';
+                img.style.left = '0';
+                img.style.width = '100%';
+                img.style.height = '100%';
+                img.style.objectFit = 'contain';
+            }
+        }
+    });
+}
+async function processEnhancedProducts() {
+    const cards = await waitForCards();
+
+    for (const card of cards) {
+        const idMatch = card.id.match(/productCard-(\d+)/);
+        if (!idMatch) continue;
+
+        const productId = idMatch[1];
+        try {
+            // Extract TYPE from product card name
+            const productName = card.querySelector('.product-name')?.textContent || '';
+            const nameLower = productName.toLowerCase();
+            let type = 'Men'; // Default to Men
+            if (nameLower.includes('women')) type = 'Women';
+            if (nameLower.includes('kid') || nameLower.includes('youth')) type = 'Youth';
+            card.setAttribute('data-type', type.toLowerCase());
+
+            // Extract PRICE from hidden price element
+            const priceElement = card.querySelector('.product-price');
+            let price = 0;
+            if (priceElement) {
+                const priceText = priceElement.textContent.replace(/[^0-9.]/g, '');
+                price = parseFloat(priceText) || 0;
+            }
+            card.setAttribute('data-price', price);
+
+           // Extract COLORS from swatches - ensure this uses the correct selector
+            const colorSwatches = card.querySelectorAll('.swatch-wrap .color-swatch');
+            const colors = [];
+            colorSwatches.forEach(swatch => {
+                const bgColor = window.getComputedStyle(swatch).backgroundColor;
+                if (bgColor && bgColor !== 'rgba(0, 0, 0, 0)') {
+                    colors.push(bgColor);
+                }
+            });
+            card.setAttribute('data-colors', colors.join(','));
+
+            // Other attributes from API
+            const res = await fetch(`https://cdn.inksoft.com/tshirt_source/Api2/GetProduct?ProductID=${productId}`);
+            const data = await res.json();
+            const description = data?.Data?.LongDescription || '';
+            const styles = data?.Data?.Styles || [];
+            
+            let allSizes = [];
+            let totalWeight = 0;
+            let sizeCount = 0;
+
+            styles.forEach(style => {
+                if (style.Sizes) {
+                    style.Sizes.forEach(s => {
+                        const sizeName = (s.Name || "").toUpperCase();
+                        allSizes.push(sizeName);
+                        const w = parseFloat(s.Weight);
+                        if (!isNaN(w)) {
+                            totalWeight += w;
+                            sizeCount++;
+                        }
+                    });
+                }
+            });
+
+            const uniqueSizes = [...new Set(allSizes)];
+            card.setAttribute('data-sizes', uniqueSizes.map(s => s.toLowerCase()).join(','));
+
+            if (totalWeight && sizeCount) {
+                const avgWeight = totalWeight / sizeCount;
+                const label = getWeightCategory(avgWeight);
+                card.setAttribute('data-weight', label.toLowerCase());
+            }
+
+            const material = normalizeMaterial(description);
+            card.setAttribute('data-material', material.toLowerCase());
+
+            const fitsExtracted = extractFit(description);
+            card.setAttribute('data-fit', fitsExtracted.map(f => f.toLowerCase()).join(', '));
+
+        } catch (e) {
+            // Set defaults if API fails
+            card.setAttribute('data-sizes', '');
+            card.setAttribute('data-weight', '');
+            card.setAttribute('data-material', 'others');
+            card.setAttribute('data-fit', 'others');
+            card.setAttribute('data-price', '0');
+            card.setAttribute('data-type', 'men');
+            card.setAttribute('data-colors', '');
+        }
+    }
+
+    buildEnhancedFilters();
+    applySavedFilterState();
 }
 
-.price-table tr.highlight-row td {
-  background: #fff8e1 !important;
-  font-weight: 600 !important;
+// ========================================
+// CORE FILTER FUNCTIONS
+// ========================================
+function createColorFilter() {
+    const sidebar = document.querySelector('.category-list.m-t-2.r14');
+    if (!sidebar) {
+        setTimeout(createColorFilter, 500);
+        return;
+    }
+
+    // Check if color filter section already exists
+    let colorFilterSection = [...sidebar.querySelectorAll('.filter-section h4')].find(h4 => 
+        h4.innerText.includes("Color")
+    );
+
+    if (!colorFilterSection) {
+        // Create the color filter section if it doesn't exist
+        const section = document.createElement('div');
+        section.className = 'filter-section';
+        
+        const h4 = document.createElement('h4');
+        h4.textContent = 'Color';
+        h4.style.cssText = 'font-size:16px;font-weight:bold;margin-bottom:8px;border-bottom:1px solid #ddd;padding-bottom:5px;display:flex;justify-content:space-between;align-items:center;';
+        
+        const toggleSpan = document.createElement('span');
+        toggleSpan.textContent = '-';
+        toggleSpan.style.cssText = 'float:right;cursor:pointer;font-size:18px;';
+        h4.appendChild(toggleSpan);
+
+        const content = document.createElement('div');
+        content.className = 'filter-content';
+        content.style.cssText = 'display:block;padding-top:10px;';
+
+        h4.addEventListener('click', () => {
+            const isVisible = content.style.display === 'block';
+            content.style.display = isVisible ? 'none' : 'block';
+            toggleSpan.textContent = isVisible ? '+' : '-';
+        });
+
+        section.appendChild(h4);
+        section.appendChild(content);
+        
+        // Insert at the top of the sidebar
+        if (sidebar.firstChild) {
+            sidebar.insertBefore(section, sidebar.firstChild);
+        } else {
+            sidebar.appendChild(section);
+        }
+        
+        colorFilterSection = h4;
+    }
+
+    const colorFilterContainer = colorFilterSection.parentNode.querySelector('.filter-content');
+    colorFilterContainer.innerHTML = '';
+    
+    // Create color selector UI
+    const colorWrapper = document.createElement('div');
+    colorWrapper.style.cssText = 'display:flex;flex-wrap:wrap;gap:10px;padding-bottom:15px;';
+    
+    // Add color options for each base color
+    Object.keys(baseColors).forEach(colorName => {
+        const colorButton = document.createElement('button');
+        colorButton.style.cssText = `
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            border: 2px solid #ccc;
+            cursor: pointer;
+            background-color: ${getColorHex(colorName)};
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        `;
+        colorButton.title = colorName;
+        colorButton.dataset.color = colorName;
+        
+        // Add checkmark for selected colors
+        if (filterState.color && filterState.color.includes(colorName)) {
+colorButton.innerHTML = '✓'; // With this HTML entity:
+colorButton.innerHTML = '&#10003;'; // This will ensure the checkmark renders            colorButton.style.color = getContrastColor(getColorHex(colorName));
+            colorButton.style.fontWeight = 'bold';
+            colorButton.style.borderColor = '#333';
+              colorButton.style.color = '#00FF00'; // Bright green
+
+        }
+
+        colorButton.addEventListener('click', (e) => {
+            e.stopPropagation();
+            const isSelected = filterState.color && filterState.color.includes(colorName);
+            
+            if (isSelected) {
+                filterState.color = filterState.color.filter(c => c !== colorName);
+                colorButton.innerHTML = '';
+                colorButton.style.borderColor = '#ccc';
+            } else {
+                if (!filterState.color) filterState.color = [];
+                filterState.color.push(colorName);
+colorButton.innerHTML = '✓'; // With this HTML entity:
+colorButton.innerHTML = '&#10003;'; // This will ensure the checkmark renders                colorButton.style.color = getContrastColor(getColorHex(colorName));
+                colorButton.style.borderColor = '#333';
+                  colorButton.style.color = '#00FF00'; // Bright green
+
+            }
+            
+            saveFilterState();
+            runCombinedFilters();
+        });
+        
+        colorWrapper.appendChild(colorButton);
+    });
+    
+    // Reset button
+    const resetButton = document.createElement('button');
+    resetButton.textContent = "Reset Colors";
+    resetButton.style.cssText = `
+        padding: 8px 15px;
+        margin-top: 12px;
+        cursor: pointer;
+        border: none;
+        background-color: darkred;
+        color: white;
+        font-size: 14px;
+        border-radius: 5px;
+        width: 100%;
+    `;
+    resetButton.addEventListener('click', () => {
+        filterState.color = [];
+        saveFilterState();
+        runCombinedFilters();
+        colorWrapper.querySelectorAll('button').forEach(btn => {
+            btn.innerHTML = '';
+            btn.style.borderColor = '#ccc';
+        });
+    });
+    
+    colorFilterContainer.appendChild(colorWrapper);
+    colorFilterContainer.appendChild(resetButton);
 }
 
-.color-swatch {
-  border-radius: 50% !important;
-  border: 1px solid #e0e0e0 !important;
-  margin-right: 5px !important;
-  width: 20px !important;
-  height: 20px !important;
+// Helper function to get hex color for swatches
+function getColorHex(colorName) {
+    const colorMap = {
+        'Red': '#ff0000',
+        'Blue': '#0000ff',
+        'Green': '#008000',
+        'Yellow': '#ffff00',
+        'Orange': '#ffa500',
+        'Purple': '#800080',
+        'Pink': '#ffc0cb',
+        'Black': '#000000',
+        'White': '#ffffff',
+        'Gray': '#808080',
+        'Brown': '#a52a2a',
+        'Teal': '#008080',
+        'Navy': '#000080'
+    };
+    return colorMap[colorName] || '#cccccc';
 }
 
-.color-wrap-control {
-  display: none !important;
+// Helper function to get contrasting text color
+function getContrastColor(hexColor) {
+    // Convert hex to RGB
+    const r = parseInt(hexColor.substr(1, 2), 16);
+    const g = parseInt(hexColor.substr(3, 2), 16);
+    const b = parseInt(hexColor.substr(5, 2), 16);
+    
+    // Calculate luminance
+    const luminance = (0.299 * r + 0.587 * g + 0.114 * b) / 255;
+    
+    // Return black or white depending on luminance
+    return luminance > 0.5 ? '#000000' : '#ffffff';
+} 
+
+
+function extractSwatchColors() {
+    let colorElements = document.querySelectorAll('.swatch-wrap .color-swatch');
+    let colors = new Set();
+    
+    colorElements.forEach(el => {
+        let bgColor = window.getComputedStyle(el).backgroundColor;
+        if (bgColor && bgColor !== 'rgba(0, 0, 0, 0)') {
+            colors.add(bgColor);
+        }
+    });
+    
+    return Array.from(colors);
 }
 
-.swatch-wrap {
-  overflow: visible !important;
-  white-space: normal !important;
+
+
+function createFilter(titleText, existingContent = null) {
+    let wrapper = document.createElement('div');
+    wrapper.className = 'filter-section';
+    
+    let title = document.createElement('h4');
+    title.innerHTML = `${titleText}<span style="float: right; cursor: pointer; font-size: 18px;">-</span>`;
+    title.style.cssText = `    transition: background 0.3s ease-in-out, color 0.3s ease-in-out;font-size:16px!important;font-weight:bold!important;margin-bottom:8px!important;cursor:pointer!important;border-bottom:1px solid#ddd!important;padding-bottom:5px!important;display:flex!important;justify-content:space-between!important;align-items:center!important;`;
+    
+    let content = document.createElement('div');
+    content.className = 'filter-content';
+    content.style.cssText = `display:block!important;padding-top:10px!important;`;
+    
+    if (existingContent) {
+        content.appendChild(existingContent);
+    }
+
+    title.addEventListener('click', () => {
+        let isVisible = content.style.display === 'block';
+        content.style.display = isVisible ? 'none' : 'block';
+        title.innerHTML = `${titleText}<span style="float: right; cursor: pointer; font-size: 18px;">${isVisible ? '+' : '-'}</span>`;
+    });
+    
+    wrapper.appendChild(title);
+    wrapper.appendChild(content);
+    return wrapper;
 }
 
-.custom-colors-count {
-  font-size: 11px !important;
-  color: #666 !important;
-  margin-left: 5px !important;
-  font-weight: 600 !important;
+function moveBrandList() {
+    let brandList = document.querySelector('.category-list.m-t-2.r14 ul.ng-star-inserted');
+    let brandFilter = [...document.querySelectorAll('.filter-section h4')].find(h4 => h4.innerText.includes("Brand"))?.parentNode?.querySelector('.filter-content');
+    
+    if (brandList && brandFilter) {
+        brandFilter.appendChild(brandList);
+    } else {
+        setTimeout(moveBrandList, 500);
+    }
 }
 
-/* Live Chat Styles */
-#custom-chatbot {
-  position: fixed;
-  bottom: 60px;
-  right: 20px;
-  background: darkred;
-  color: white;
-  padding: 10px 15px;
-  border-radius: 20px;
-  cursor: pointer;
-  font-weight: bold;
-  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
-  z-index: 9999;
+function extractSwatchColors() {
+    let colorElements = document.querySelectorAll('.swatch-wrap .color-swatch');
+    let colors = new Set();
+    
+    colorElements.forEach(el => {
+        let bgColor = window.getComputedStyle(el).backgroundColor;
+        if (bgColor && bgColor !== 'rgba(0, 0, 0, 0)') {
+            colors.add(bgColor);
+        }
+    });
+    
+    return Array.from(colors);
 }
 
-#chat-window {
-  position: fixed;
-  bottom: 70px;
-  right: 20px;
-  width: 300px;
-  height: 400px;
-  background: white;
-  border: 1px solid #ddd;
-  border-radius: 10px;
-  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
-  display: none;
-  overflow: hidden;
-  z-index: 9999;
+// Update the price extraction function to handle more cases
+function extractHiddenPrices() {
+    let products = document.querySelectorAll('.product-card');
+    products.forEach(product => {
+        // Try multiple selectors for price
+        let priceElement = product.querySelector('.product-price') || 
+                          product.querySelector('.price') || 
+                          product.querySelector('.product-card-price');
+        
+        if (priceElement) {
+            // Handle both visible and hidden price text
+            let priceText = priceElement.textContent || priceElement.innerText;
+            
+            // Extract all numbers including decimals (handles $12.34, 12.34, etc.)
+            let priceMatch = priceText.match(/(\d+\.\d{2})|(\d+)/);
+            if (priceMatch) {
+                let price = parseFloat(priceMatch[0]);
+                if (!isNaN(price)) {
+                    product.setAttribute('data-price', price.toFixed(2));
+                    // Also set price range category
+                    let priceRange = '$';
+                    if (price > 10 && price <= 29) priceRange = '$$';
+                    if (price >= 30) priceRange = '$$$';
+                    product.setAttribute('data-price-range', priceRange);
+                }
+            }
+        }
+    });
 }
 
-/* Store Map Styles */
-.store-map {
-  width: 100%;
-  max-width: 600px;
-  height: 150px;
-  border: 0;
-  margin-top: 10px;
-  margin-bottom: 30px;
+
+function filterByCategory() {
+    let selectedCategories = [...document.querySelectorAll('.category-filter input:checked')].map(cb => cb.value);
+    let products = document.querySelectorAll('.product-card');
+    
+    products.forEach(product => {
+        let category = product.getAttribute('data-category') || '';
+        
+        if (selectedCategories.length === 0) {
+            product.style.display = 'block';
+            return;
+        }
+
+        let showProduct = selectedCategories.includes(category);
+        product.style.display = showProduct ? 'block' : 'none';
+    });
+    reorderVisibleProducts();
 }
 
-.store-map-title {
-  font-family: Poppins, sans-serif;
-  font-size: 18px;
-  font-weight: 600;
-  margin-top: 30px;
-  margin-bottom: 5px;
-  color: #333;
+
+
+
+// ========================================
+// PERSISTENT FILTERS INITIALIZATION
+// ========================================
+
+let filterObserver = null;
+
+async function forceSidebarFilters() {
+    let sidebar = document.querySelector('.category-list.m-t-2.r14');
+    
+    if (sidebar) {
+        let existingFilters = document.querySelectorAll('.filter-section');
+        
+        if (existingFilters.length === 0) {
+            const loadingMsg = document.createElement('div');
+            sidebar.appendChild(loadingMsg);
+            
+            try {
+                let categoryContent = document.createElement('div');
+                while (sidebar.firstChild) {
+                    categoryContent.appendChild(sidebar.firstChild);
+                }
+                
+                let filters = [
+                    { name: 'Categories', content: categoryContent },
+                    { name: 'Brand', content: null }
+                ];
+                
+                filters.forEach(({ name, content }) => {
+                    let filterElement = createFilter(name, content);
+                    sidebar.appendChild(filterElement);
+                });
+                
+                moveBrandList();
+                setTimeout(createColorFilter, 1000);
+                
+                // Initialize enhanced filters
+                await processEnhancedProducts();
+                   // Move brand and categories to bottom
+                 moveBrandAndCategoriesToBottom();
+                loadingMsg.remove();
+            } catch (e) {
+                loadingMsg.textContent = 'Failed to load filters. Please refresh the page.';
+            }
+        } else {
+            // If filters already exist, just initialize the enhanced ones
+            await processEnhancedProducts();
+        }
+    } else {
+        setTimeout(forceSidebarFilters, 500);
+    }
 }
+
+
+function moveBrandAndCategoriesToBottom() {
+    const sidebar = document.querySelector('.category-list.m-t-2.r14');
+    if (!sidebar) return;
+
+    // Get all filter sections
+    const filterSections = Array.from(sidebar.querySelectorAll('.filter-section'));
+    
+    // Find Brand and Categories sections
+    const brandSection = filterSections.find(section => 
+        section.querySelector('h4')?.textContent.includes('Brand'));
+    const categoriesSection = filterSections.find(section => 
+        section.querySelector('h4')?.textContent.includes('Categories'));
+    
+    if (brandSection && categoriesSection) {
+        // Remove them from current position
+        brandSection.remove();
+        categoriesSection.remove();
+        
+        // Add them back at the bottom
+        sidebar.appendChild(categoriesSection);
+        sidebar.appendChild(brandSection);
+        
+        // Make sure they're visible
+        categoriesSection.style.display = 'block';
+        brandSection.style.display = 'block';
+        
+        // Ensure their content is visible
+        const categoriesContent = categoriesSection.querySelector('.filter-content');
+        const brandContent = brandSection.querySelector('.filter-content');
+        if (categoriesContent) categoriesContent.style.display = 'block';
+        if (brandContent) brandContent.style.display = 'block';
+    }
+}
+
+
+function initializeFilters() {
+    // Load saved filter state
+    loadFilterState();
+    
+    // Clear existing observer if it exists
+    if (filterObserver) {
+        filterObserver.disconnect();
+    }
+    
+    // Initialize all filter functions
+    extractHiddenPrices();
+    forceSidebarFilters();
+    enableTypeFilter();
+    enableMaterialFilter();
+    processEnhancedProducts();
+    
+    // Set up observer to reinitialize when filters change
+    filterObserver = new MutationObserver((mutations) => {
+        let needsReinit = false;
+        
+        mutations.forEach(mutation => {
+            if (mutation.type === 'childList') {
+                // Check if any filter-related elements were added/removed
+                if (mutation.addedNodes.length > 0 || mutation.removedNodes.length > 0) {
+                    needsReinit = true;
+                }
+            }
+        });
+        
+        if (needsReinit) {
+            initializeFilters();
+        }
+    });
+    
+    // Observe the sidebar container
+    const sidebar = document.querySelector('.category-list.m-t-2.r14');
+    if (sidebar) {
+        filterObserver.observe(sidebar, {
+            childList: true,
+            subtree: true
+        });
+    }
+    
+    // Also observe the products container for changes
+    const productsContainer = document.querySelector('.products-container') || document.querySelector('.grid-x.grid-padding-x.align-left');
+    if (productsContainer) {
+        filterObserver.observe(productsContainer, {
+            childList: true,
+            subtree: true
+        });
+    }
+}
+
+// ========================================
+// EVENT LISTENERS AND INITIALIZATION
+// ========================================
+
+document.addEventListener("DOMContentLoaded", () => {
+    initializeMegaMenu();
+    initializeFilters();
+    moveBrandAndCategoriesToBottom(); // Add this line
+
+});
+
+// Also initialize after a delay in case of dynamic loading
+setTimeout(() => {
+    initializeMegaMenu();
+    initializeFilters();
+    moveBrandAndCategoriesToBottom(); // Add this line
+
+}, 1000);
+
+// Set up interval for refreshing enhanced filters
+setInterval(() => {
+    processEnhancedProducts();
+}, 120000); // 2 minutes
+
+// Make filter handler available globally
+window.runCombinedFilters = runCombinedFilters;
+
+// ========================================
+// STYLES
+// ========================================
+        // top: -200px !important; for product card views
+const style = document.createElement('style');
+style.textContent = `
+    .custom-mega-menu {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        background: white;
+        border: 1px solid #ddd;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        z-index: 1000;
+        min-width: 600px;
+        padding: 20px;
+    }
+    
+    .mega-menu-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 30px;
+    }
+    
+    .mega-column h3 {
+        font-size: 16px;
+        font-weight: bold;
+        margin-bottom: 10px;
+        color: #333;
+        border-bottom: 2px solid darkred;
+        padding-bottom: 5px;
+    }
+    
+    .mega-column a {
+        display: block;
+        padding: 8px 0;
+        color: #666;
+        text-decoration: none;
+        font-size: 14px;
+        position: relative;
+        transition: color 0.3s ease;
+    }
+    
+    .mega-column a:hover {
+        color: darkred;
+        text-decoration: underline;
+    }
+    
+    .mega-column .popular {
+        background: darkred;
+        color: white;
+        font-size: 10px;
+        padding: 2px 6px;
+        border-radius: 3px;
+        margin-left: 8px;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+    
+    /* NEW STYLES FOR PRODUCT REARRANGEMENT */
+    .products-container {
+      display: flex !important;
+      flex-wrap: wrap !important;
+      gap: 20px !important;
+      justify-content: flex-start !important;
+      align-items: flex-start !important;
+      margin: 0 auto !important;
+      padding: 0 !important;
+    }
+    
+    .product-card {
+      flex: 0 0 calc(33.333% - 20px) !important;
+      box-sizing: border-box !important;
+      margin: 0 !important;
+      order: 0 !important;
+      position: relative !important;
+      transition: top 0.3s ease !important;
+    }
+    
+    .product-card.shift-up {
+      margin-left: 10px !important;
+    }
+    
+    .product-card.hidden-product {
+      display: none !important;
+      opacity: 0 !important;
+      pointer-events: none !important;
+    }
+`;
+document.head.appendChild(style);
+
+
+// Mega menu function (existing)
+function waitForElement(selector, callback) {
+    const element = document.querySelector(selector);
+    if (element) {
+        callback(element);
+    } else {
+        setTimeout(() => waitForElement(selector, callback), 500);
+    }
+}
+
+waitForElement('a[href="/TShirt_Source/shop/products/all"]', (productsMenu) => {
+    document.querySelectorAll(".custom-mega-menu").forEach(menu => menu.remove());
+    
+    const megaMenu = document.createElement("div");
+    megaMenu.classList.add("custom-mega-menu");
+    megaMenu.innerHTML = `
+        <div class="mega-menu-grid">
+            <div class="mega-column">
+                <h3>T-Shirts</h3>
+                <a href="https://www.tshirtsource.com/tshirt_source/shop/products/t_shirts/long_sleeve?page=1">Long Sleeve<span class="popular">Popular</span></a>
+                <a href="https://www.tshirtsource.com/tshirt_source/shop/products/t_shirts/short_sleeve?page=1">Short Sleeve</a>
+            </div>
+            <div class="mega-column">
+                <h3>Fleece</h3>
+                <a href="https://www.tshirtsource.com/tshirt_source/shop/products/fleece/hoodies?page=1">Hoodies</a>
+                <a href="https://www.tshirtsource.com/tshirt_source/shop/products/fleece/crewneck_sweatshirt?page=1">Crewneck Sweatshirt</a>
+                <h3>Hats</h3>
+                <a href="https://www.tshirtsource.com/tshirt_source/shop/products/hats/trucker_hats?page=1">Trucker hat</a>
+                <a href="https://www.tshirtsource.com/tshirt_source/shop/products/hats/dad_hats?page=1">Dad hat</a>
+                <a href="https://www.tshirtsource.com/tshirt_source/shop/products/hats/beanies?page=1">Beanies<span class="popular">Popular</span></a>
+            </div>
+            <div class="mega-column">
+                <h3>Jackets</h3>
+                <a href="https://www.tshirtsource.com/tshirt_source/shop/products/jackets/soft_shell?page=1">Soft Shell</a>
+                <a href="https://www.tshirtsource.com/tshirt_source/shop/products/jackets/windbreakers?page=1">Windbreakers</a>
+            </div>
+            <div class="mega-column">
+                <h3>Polos</h3>
+                <a href="https://www.tshirtsource.com/tshirt_source/shop/products/polos/unisex?page=1">Unisex</a>
+                <a href="https://www.tshirtsource.com/tshirt_source/shop/products/polos/women?page=1">Women</a>
+            </div>
+        </div>`;
+    
+    productsMenu.parentNode.appendChild(megaMenu);
+    
+    productsMenu.addEventListener("mouseenter", () => {
+        megaMenu.style.display = "block";
+    });
+    
+    productsMenu.addEventListener("mouseleave", () => {
+        megaMenu.style.display = "none";
+    });
+    
+    megaMenu.addEventListener("mouseenter", () => {
+        megaMenu.style.display = "block";
+    });
+    
+    megaMenu.addEventListener("mouseleave", () => {
+        megaMenu.style.display = "none";
+    });
+    
+});    // Add Account Mega Menu
+waitForElement('#myAccountDropdown', (accountMenu) => {
+    const accountMegaMenu = document.createElement("div");
+    accountMegaMenu.classList.add("account-mega-menu");
+    accountMegaMenu.innerHTML = `
+        <div class="mega-menu-grid">
+            <div class="mega-column">
+                <h3>My Account</h3>
+                <a href="https://www.tshirtsource.com/TShirt_Source/shop/my-account">Account Overview</a>
+                <a href="https://www.tshirtsource.com/TShirt_Source/shop/my-account/profile">Profile</a>
+                <a href="https://www.tshirtsource.com/TShirt_Source/shop/my-account/address-book">Address Book</a>
+                <a href="https://www.tshirtsource.com/TShirt_Source/shop/my-account/payment-methods">Payment Methods</a>
+            </div>
+            <div class="mega-column">
+                <h3>My Orders</h3>
+                <a href="https://www.tshirtsource.com/TShirt_Source/shop/my-account/quotes-and-invoices">Quotes & Invoices</a>
+                <a href="https://www.tshirtsource.com/TShirt_Source/shop/my-account/orders">Order History</a>
+            </div>
+            <div class="mega-column">
+                <h3>My Designs</h3>
+                <a href="https://www.tshirtsource.com/TShirt_Source/shop/my-account/designs">Saved Designs</a>
+                <a href="https://www.tshirtsource.com/TShirt_Source/shop/my-account/uploads">Uploads</a>
+            </div>
+        </div>
+    `;
+    
+    accountMenu.parentNode.appendChild(accountMegaMenu);
+    
+    accountMenu.addEventListener("mouseenter", () => {
+        accountMegaMenu.style.display = "block";
+    });
+    
+    accountMenu.addEventListener("mouseleave", () => {
+        accountMegaMenu.style.display = "none";
+    });
+    
+    accountMegaMenu.addEventListener("mouseenter", () => {
+        accountMegaMenu.style.display = "block";
+    });
+    
+    accountMegaMenu.addEventListener("mouseleave", () => {
+        accountMegaMenu.style.display = "none";
+    });
+    
+});   
+  // ===== UPDATED ACCOUNT MEGA MENU SOLUTION =====
+let accountMenuObserver = null;
+
+function initializeAccountMegaMenu() {
+    // Load menu state first
+    loadMenuState();
+    
+    // Clear any existing observer to prevent duplicates
+    if (accountMenuObserver) {
+        accountMenuObserver.disconnect();
+    }
+
+    // Check if we already have a mega menu
+    const existingMenu = document.querySelector('.account-mega-menu');
+    if (existingMenu) {
+        // Apply saved state if menu exists
+        existingMenu.style.display = menuState.accountMenuVisible ? "block" : "none";
+        return;
+    }
+
+    // Try multiple selectors to find the account menu
+    const accountMenu = document.querySelector('#myAccountDropdown, [href*="/my-account"], .account-link');
+    
+    if (!accountMenu) {
+        // If not found, set up an observer to watch for it
+        accountMenuObserver = new MutationObserver((mutations) => {
+            mutations.forEach(() => {
+                if (document.querySelector('#myAccountDropdown, [href*="/my-account"], .account-link')) {
+                    createAccountMegaMenu();
+                    accountMenuObserver.disconnect();
+                }
+            });
+        });
+
+        accountMenuObserver.observe(document.body, {
+            childList: true,
+            subtree: true
+        });
+        return;
+    }
+
+    createAccountMegaMenu();
+}
+
+function createAccountMegaMenu() {
+    const accountMenu = document.querySelector('#myAccountDropdown, [href*="/my-account"], .account-link');
+    if (!accountMenu) return;
+
+    // Remove any existing account mega menu first
+    document.querySelectorAll('.account-mega-menu').forEach(menu => menu.remove());
+
+    const accountMegaMenu = document.createElement("div");
+    accountMegaMenu.classList.add("account-mega-menu");
+    accountMegaMenu.innerHTML = `
+        <div class="mega-menu-grid">
+            <div class="mega-column">
+                <h3>My Account</h3>
+                <a href="/TShirt_Source/shop/my-account">Account Overview</a>
+                <a href="/TShirt_Source/shop/my-account/profile">Profile</a>
+                <a href="/TShirt_Source/shop/my-account/address-book">Address Book</a>
+                <a href="/TShirt_Source/shop/my-account/payment-methods">Payment Methods</a>
+            </div>
+            <div class="mega-column">
+                <h3>My Orders</h3>
+                <a href="/TShirt_Source/shop/my-account/quotes-and-invoices">Quotes & Invoices</a>
+                <a href="/TShirt_Source/shop/my-account/orders">Order History</a>
+            </div>
+            <div class="mega-column">
+                <h3>My Designs</h3>
+                <a href="/TShirt_Source/shop/my-account/designs">Saved Designs</a>
+                <a href="/TShirt_Source/shop/my-account/uploads">Uploads</a>
+            </div>
+        </div>`;
+    
+    // Insert the mega menu in a consistent location
+    const header = document.querySelector('header') || document.body;
+    header.appendChild(accountMegaMenu);
+
+    // Apply saved state
+    accountMegaMenu.style.display = menuState.accountMenuVisible ? "block" : "none";
+
+    // Use more reliable event delegation for hover handling
+    document.addEventListener('mouseover', (e) => {
+        const isAccountMenu = e.target.closest('#myAccountDropdown, [href*="/my-account"], .account-link');
+        const isMegaMenu = e.target.closest('.account-mega-menu');
+        
+        if (isAccountMenu || isMegaMenu) {
+            accountMegaMenu.style.display = "block";
+            menuState.accountMenuVisible = true;
+            saveMenuState();
+        }
+    });
+
+    document.addEventListener('mouseout', (e) => {
+        const related = e.relatedTarget || e.toElement;
+        const isLeavingMenu = !related || 
+                            (!related.closest('#myAccountDropdown, [href*="/my-account"], .account-link') && 
+                             !related.closest('.account-mega-menu'));
+        
+        if (isLeavingMenu) {
+            accountMegaMenu.style.display = "none";
+            menuState.accountMenuVisible = false;
+            saveMenuState();
+        }
+    });
+
+    // Reinitialize after navigation
+    setupAccountMenuNavigationObserver();
+}
+
+function setupAccountMenuNavigationObserver() {
+    if (window.accountMenuNavObserver) {
+        window.accountMenuNavObserver.disconnect();
+    }
+    
+    window.accountMenuNavObserver = new MutationObserver(() => {
+        if (!document.querySelector('.account-mega-menu')) {
+            initializeAccountMegaMenu();
+        }
+    });
+    
+    window.accountMenuNavObserver.observe(document.body, {
+        childList: true,
+        subtree: true
+    });
+}
+// ===== ENHANCED NAVIGATION DETECTION =====
+let lastURL = window.location.href;
+
+function checkForNavigation() {
+    if (window.location.href !== lastURL) {
+        lastURL = window.location.href;
+        handleNavigationChange();
+    }
+    requestAnimationFrame(checkForNavigation);
+}
+
+function handleNavigationChange() {
+    // Reinitialize everything with delays to allow DOM to settle
+    setTimeout(initializeMegaMenu, 100);
+    setTimeout(initializeAccountMegaMenu, 150);
+    setTimeout(initializeFilters, 200);
+    setTimeout(applySavedFilterState, 250);
+    setTimeout(initializeMobileFilters,250);
+}
+
+// Start the navigation checker
+requestAnimationFrame(checkForNavigation);
+
+// ===== INITIALIZATION =====
+document.addEventListener("DOMContentLoaded", () => {
+    loadMenuState();
+    loadFilterState();
+    initializeMegaMenu();
+    initializeAccountMegaMenu();
+    initializeFilters();
+    moveBrandAndCategoriesToBottom();
+  initializeMobileFilters
+      observeProductGrid(); // ← ✅ Add this
+
+});
+
+// Also initialize after a delay
+setTimeout(() => {
+    initializeMegaMenu();
+    initializeAccountMegaMenu();
+    initializeFilters();
+    moveBrandAndCategoriesToBottom();
+  initializeMobileFilters
+}, 1000);
+
+// Periodic check as fallback
+setInterval(() => {
+    if (!document.querySelector('.account-mega-menu')) {
+        initializeAccountMegaMenu();
+    }
+}, 2000);
+  
+let currentURL = window.location.href;
+let navigationObserver;
+// ===== REPLACE YOUR EXISTING setupNavigationObserver() WITH THIS =====
+function setupNavigationObserver() {
+    if (navigationObserver) {
+        navigationObserver.disconnect();
+    }
+    
+    navigationObserver = new MutationObserver(() => {
+        if (window.location.href !== currentURL) {
+            currentURL = window.location.href;
+            
+            // Reinitialize after a short delay
+            setTimeout(() => {
+                initializeMegaMenu();
+                initializeAccountMegaMenu();
+                initializeFilters();
+                applySavedFilterState();
+              initializeMobileFilters
+            }, 500);
+        }
+    });
+    
+    navigationObserver.observe(document.body, {
+        childList: true,
+        subtree: true
+    });
+}
+
+
+
+
+// ========================================
+// IMPROVED MOBILE FILTER FUNCTIONS
+// ========================================
+
+function initializeMobileFilters() {
+    // Only run on mobile
+    if (window.innerWidth > 1023) return;
+
+    // Create filter container if it doesn't exist
+    if (!document.querySelector('.mobile-filter-container')) {
+        const filterContainer = document.createElement('div');
+        filterContainer.className = 'mobile-filter-container';
+        filterContainer.style.cssText = `
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.5);
+            z-index: 99999;
+            display: none;
+        `;
+        
+        const filterSidebar = document.createElement('div');
+        filterSidebar.className = 'mobile-filter-sidebar';
+        filterSidebar.style.cssText = `
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 80%;
+            max-width: 320px;
+            height: 100%;
+            background: white;
+            overflow-y: auto;
+            padding: 20px;
+            box-shadow: 2px 0 10px rgba(0,0,0,0.2);
+            transform: translateX(-100%);
+            transition: transform 0.3s ease;
+        `;
+        
+        filterContainer.appendChild(filterSidebar);
+        document.body.appendChild(filterContainer);
+    }
+
+    // Remove any existing buttons first (prevents duplicates)
+    document.querySelectorAll('.mobile-filter-button').forEach(btn => btn.remove());
+
+    // Find the flex container
+    const flexContainer = document.querySelector('.flex-container.align-middle');
+    if (!flexContainer) return;
+
+    // Create the filter button
+    const filterButton = document.createElement('button');
+    filterButton.className = 'mobile-filter-button';
+    filterButton.innerHTML = `
+        Filters 
+        <span class="filter-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M3 12h18M3 6h18M3 18h18"/>
+            </svg>
+        </span>
+    `;
+    filterButton.style.cssText = `
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        padding: 8px 16px;
+        background: darkred;
+        color: white;
+        border: none;
+        border-radius: 4px;
+        font-weight: bold;
+        cursor: pointer;
+        margin-left: 10px;
+    `;
+
+    filterButton.addEventListener('click', toggleMobileFilters);
+    flexContainer.appendChild(filterButton);
+
+    // Load the filters into the sidebar
+    loadMobileFilters();
+}
+  // In the loadMobileFilters() function, replace the category section cloning with manual category addition
+function loadMobileFilters() {
+    const sidebar = document.querySelector('.mobile-filter-sidebar');
+    if (!sidebar) return;
+
+    // Clear existing content
+    sidebar.innerHTML = '';
+
+    // Create a container for all filters
+    const filtersContainer = document.createElement('div');
+    filtersContainer.className = 'mobile-filters-content';
+    
+    // MANUALLY ADD CATEGORIES SECTION (instead of cloning)
+    const categorySection = document.createElement('div');
+    categorySection.className = 'filter-section';
+    
+    const categoryTitle = document.createElement('h4');
+    categoryTitle.textContent = 'Categories';
+    categoryTitle.style.cssText = 'font-size:16px;font-weight:bold;margin-bottom:8px;border-bottom:1px solid #ddd;padding-bottom:5px;';
+    
+    const categoryList = document.createElement('div');
+    categoryList.className = 'filter-content';
+    categoryList.style.display = 'block';
+    
+    // Add your manual categories here
+    const categories = [
+        { name: 'T-Shirts', url: 'https://www.tshirtsource.com/TShirt_Source/shop/products/t_shirts?page=1' },
+        { name: 'Long Sleeve', url: 'https://www.tshirtsource.com/TShirt_Source/shop/products/long_sleeve?page=1' },
+        { name: 'Jackets', url: 'https://www.tshirtsource.com/TShirt_Source/shop/products/jackets?page=1' },
+        { name: 'Bottoms', url: 'https://www.tshirtsource.com/TShirt_Source/shop/products/bottoms?page=1' },
+        { name: 'Polos', url: 'https://www.tshirtsource.com/TShirt_Source/shop/products/polos?page=1' },
+        { name: 'Performance', url: 'https://www.tshirtsource.com/TShirt_Source/shop/products/performance?page=1' },
+        { name: 'Hats', url: 'https://www.tshirtsource.com/TShirt_Source/shop/products/hats?page=1' },
+        { name: 'Vests', url: 'https://www.tshirtsource.com/TShirt_Source/shop/products/vests?page=1' },
+        { name: 'Workwear', url: 'https://www.tshirtsource.com/TShirt_Source/shop/products/workwear_uniforms?page=1' },
+        { name: 'Fleece', url: 'https://www.tshirtsource.com/TShirt_Source/shop/products/fleece?page=1' },
+        { name: 'Tank Tops', url: 'https://www.tshirtsource.com/TShirt_Source/shop/products/tank_top?page=1' },
+        { name: 'Baby/Infant', url: 'https://www.tshirtsource.com/TShirt_Source/shop/products/baby_infant?page=1' },
+        { name: 'Signs & Banners', url: 'https://www.tshirtsource.com/TShirt_Source/shop/products/signs_banners?page=1' },
+        { name: 'Bags', url: 'https://www.tshirtsource.com/TShirt_Source/shop/products/bags?page=1' },
+        { name: 'Athletic Wear', url: 'https://www.tshirtsource.com/TShirt_Source/shop/products/athletic_wear?page=1' },
+        { name: 'Brands', url: 'https://www.tshirtsource.com/TShirt_Source/shop/products/brands?page=1' },
+         { name: 'All Products', url: 'https://www.tshirtsource.com/TShirt_Source/shop/products/all?page=1' }
+      
+    ];
+    categories.forEach(category => {
+        const link = document.createElement('a');
+        link.href = category.url;
+        link.textContent = category.name;
+        link.className = 'body1';
+        link.style.cssText = 'display: block; padding: 8px 0; color: darkred; text-decoration: none;';
+        
+        link.addEventListener('click', function(e) {
+            e.preventDefault();
+            toggleMobileFilters();
+            window.location.href = category.url;
+        });
+        
+        categoryList.appendChild(link);
+    });
+
+    categorySection.appendChild(categoryTitle);
+    categorySection.appendChild(categoryList);
+    filtersContainer.appendChild(categorySection);
+    
+    // Rest of your existing filter sections
+    createMobileColorFilter(filtersContainer);
+    createMobileFilterSection('Size', FIXED_SIZES, 'size', filtersContainer);
+    createMobileFilterSection('Price', FIXED_PRICES, 'price', filtersContainer);
+    createMobileFilterSection('Type', FIXED_TYPES, 'type', filtersContainer);
+    createMobileFilterSection('Fit', FIXED_FITS, 'fit', filtersContainer);
+    createMobileFilterSection('Material', FIXED_MATERIALS, 'material', filtersContainer);
+    createMobileFilterSection('Weight', FIXED_WEIGHTS, 'weight', filtersContainer);
+    
+    // Add the filters container to the sidebar
+    sidebar.appendChild(filtersContainer);
+    
+    // Add close button
+    const closeButton = document.createElement('button');
+    closeButton.textContent = 'Close Filters';
+    closeButton.style.cssText = `
+        width: 100%;
+        padding: 12px;
+        margin-top: 20px;
+        background: darkred;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        font-weight: bold;
+        cursor: pointer;
+    `;
+    closeButton.addEventListener('click', toggleMobileFilters);
+    sidebar.appendChild(closeButton);
+}
+  
+function reactivateFilterListeners(section) {
+    // Reactivate checkbox filters
+    const checkboxes = section.querySelectorAll('input[type="checkbox"]');
+    checkboxes.forEach(checkbox => {
+        const filterType = getFilterTypeFromCheckbox(checkbox);
+        if (filterType) {
+            checkbox.addEventListener('change', (e) => {
+                updateFilterState(filterType, e.target.value, e.target.checked);
+                runCombinedFilters();
+            });
+        }
+    });
+    
+    // Reactivate reset buttons
+    const resetButtons = section.querySelectorAll('button');
+    resetButtons.forEach(button => {
+        if (button.textContent.includes('Reset')) {
+            button.addEventListener('click', () => {
+                filterState.color = [];
+                saveFilterState();
+                resetColorFilter();
+            });
+        }
+    });
+
+    // Enhanced category link reactivation
+    const categoryLinks = section.querySelectorAll('a.body1');
+    categoryLinks.forEach(link => {
+        // Remove any existing click handlers to prevent duplicates
+        const newLink = link.cloneNode(true);
+        link.parentNode.replaceChild(newLink, link);
+        
+        // Add new click handler
+        newLink.addEventListener('click', function(e) {
+            e.preventDefault();
+            const href = this.getAttribute('href');
+            if (href) {
+                // Close mobile filters
+                const filterContainer = document.querySelector('.mobile-filter-container');
+                if (filterContainer) {
+                    filterContainer.style.display = 'none';
+                }
+                // Navigate to category
+                window.location.href = href;
+            }
+        });
+    });
+}
+  
+  function reactivateCategoryLinks(section) {
+    // Get all category links
+    const links = section.querySelectorAll('a.body1');
+    
+    links.forEach(link => {
+        // Remove any existing click handlers
+        const newLink = link.cloneNode(true);
+        link.parentNode.replaceChild(newLink, link);
+        
+        // Add new click handler
+        newLink.addEventListener('click', function(e) {
+            e.preventDefault();
+            const href = this.getAttribute('href');
+            if (href) {
+                // Close mobile filters
+                toggleMobileFilters();
+                // Navigate to the category page
+                window.location.href = href;
+            }
+        });
+        
+        // Debug logging
+    });
+}
+
+function getFilterTypeFromCheckbox(checkbox) {
+    // Find the closest filter section
+    const section = checkbox.closest('.filter-section');
+    if (!section) return null;
+    
+    const title = section.querySelector('h4')?.textContent?.toLowerCase();
+    if (!title) return null;
+    
+    if (title.includes('category')) return 'category';
+    if (title.includes('brand')) return 'brand';
+    if (title.includes('size')) return 'size';
+    if (title.includes('material')) return 'material';
+    if (title.includes('fit')) return 'fit';
+    if (title.includes('weight')) return 'weight';
+    if (title.includes('type')) return 'type';
+    if (title.includes('price')) return 'price';
+    if (title.includes('color')) return 'color';
+    
+    return null;
+}
+
+function createMobileColorFilter(container) {
+    const section = document.createElement('div');
+    section.className = 'filter-section';
+    
+    const title = document.createElement('h4');
+    title.textContent = 'Color';
+    title.style.cssText = 'font-size:16px;font-weight:bold;margin-bottom:8px;border-bottom:1px solid #ddd;padding-bottom:5px;';
+    
+    const colorWrapper = document.createElement('div');
+    colorWrapper.style.cssText = 'display:flex;flex-wrap:wrap;gap:10px;padding-bottom:15px;';
+    
+    // Add color options for each base color
+    Object.keys(baseColors).forEach(colorName => {
+        const colorButton = document.createElement('button');
+        colorButton.style.cssText = `
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            border: 2px solid #ccc;
+            cursor: pointer;
+            background-color: ${getColorHex(colorName)};
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        `;
+        colorButton.title = colorName;
+        colorButton.dataset.color = colorName;
+        
+        // Add checkmark for selected colors
+        if (filterState.color && filterState.color.includes(colorName)) {
+            colorButton.innerHTML = '?';
+            colorButton.style.color = getContrastColor(getColorHex(colorName));
+            colorButton.style.fontWeight = 'bold';
+            colorButton.style.borderColor = '#333';
+        }
+
+        colorButton.addEventListener('click', (e) => {
+            e.stopPropagation();
+            const isSelected = filterState.color && filterState.color.includes(colorName);
+            
+            if (isSelected) {
+                filterState.color = filterState.color.filter(c => c !== colorName);
+                colorButton.innerHTML = '';
+                colorButton.style.borderColor = '#ccc';
+            } else {
+                if (!filterState.color) filterState.color = [];
+                filterState.color.push(colorName);
+                colorButton.innerHTML = '?';
+                colorButton.style.color = getContrastColor(getColorHex(colorName));
+                colorButton.style.fontWeight = 'bold';
+                colorButton.style.borderColor = '#333';
+            }
+            
+            saveFilterState();
+            runCombinedFilters();
+        });
+        
+        colorWrapper.appendChild(colorButton);
+    });
+    
+    // Reset button
+    const resetButton = document.createElement('button');
+    resetButton.textContent = "Reset Colors";
+    resetButton.style.cssText = `
+        padding: 8px 15px;
+        margin-top: 12px;
+        cursor: pointer;
+        border: none;
+        background-color: darkred;
+        color: white;
+        font-size: 14px;
+        border-radius: 5px;
+        width: 100%;
+    `;
+    resetButton.addEventListener('click', () => {
+        filterState.color = [];
+        saveFilterState();
+        colorWrapper.querySelectorAll('button').forEach(btn => {
+            btn.innerHTML = '';
+            btn.style.borderColor = '#ccc';
+        });
+        runCombinedFilters();
+    });
+    
+    section.appendChild(title);
+    section.appendChild(colorWrapper);
+    section.appendChild(resetButton);
+    container.appendChild(section);
+}
+
+function createMobileFilterSection(title, options, key, container) {
+    const section = document.createElement('div');
+    section.className = 'filter-section';
+    
+    const h4 = document.createElement('h4');
+    h4.textContent = title;
+    h4.style.cssText = 'font-size:16px;font-weight:bold;margin-bottom:8px;border-bottom:1px solid #ddd;padding-bottom:5px;display:flex;justify-content:space-between;align-items:center;';
+    
+    const toggleSpan = document.createElement('span');
+    toggleSpan.textContent = '-';
+    toggleSpan.style.cssText = 'float:right;cursor:pointer;font-size:18px;';
+    h4.appendChild(toggleSpan);
+    
+    const wrapper = document.createElement('div');
+    wrapper.className = `${key}-enhanced-filter`;
+    wrapper.style.cssText = 'display:block;padding-top:10px;';
+    
+    options.forEach(opt => {
+        const label = document.createElement('label');
+        label.style.cssText = 'display:flex;gap:10px;font-size:16px;cursor:pointer;line-height:22px;margin-bottom:8px;';
+        
+        const cb = document.createElement('input');
+        cb.type = 'checkbox';
+        cb.value = opt;
+        cb.style.cssText = 'width:20px;height:20px;cursor:pointer;';
+        
+        cb.addEventListener('change', (e) => {
+            updateFilterState(key, opt, e.target.checked);
+            runCombinedFilters();
+        });
+        
+        if (filterState[key] && filterState[key].includes(opt)) {
+            cb.checked = true;
+        }
+        
+        label.appendChild(cb);
+        label.appendChild(document.createTextNode(opt));
+        wrapper.appendChild(label);
+    });
+    
+    h4.addEventListener('click', () => {
+        const isVisible = wrapper.style.display === 'block';
+        wrapper.style.display = isVisible ? 'none' : 'block';
+        toggleSpan.textContent = isVisible ? '+' : '-';
+    });
+    
+    section.appendChild(h4);
+    section.appendChild(wrapper);
+    container.appendChild(section);
+}
+
+function toggleMobileFilters() {
+    const container = document.querySelector('.mobile-filter-container');
+    const sidebar = document.querySelector('.mobile-filter-sidebar');
+    
+    if (!container || !sidebar) return;
+    
+    // Check if filters are currently visible
+    const isVisible = container.style.display === 'block';
+    
+    if (isVisible) {
+        // Closing animation
+        sidebar.style.transform = 'translateX(-100%)';
+        
+        // Hide container after animation completes
+        setTimeout(() => {
+            container.style.display = 'none';
+        }, 300);
+    } else {
+        // Show container first
+        container.style.display = 'block';
+        
+        // Then slide in sidebar
+        setTimeout(() => {
+            sidebar.style.transform = 'translateX(0)';
+        }, 10);
+    }
+}
+// Add click event to close when clicking outside
+document.addEventListener('click', (e) => {
+    const container = document.querySelector('.mobile-filter-container');
+    const sidebar = document.querySelector('.mobile-filter-sidebar');
+    
+    if (container && container.style.display === 'block' && 
+        !sidebar.contains(e.target) && 
+        !e.target.closest('.mobile-filter-button')) {
+        toggleMobileFilters();
+    }
+});
+
+// Initialize when page loads
+document.addEventListener('DOMContentLoaded', initializeMobileFilters);
+// Also initialize after a delay in case of dynamic loading
+setTimeout(initializeMobileFilters, 1000);
+  // Add this comprehensive mobile styling solution
+const mobileProductStyles = `
+  /* Mobile Product Grid Fixes */
+  @media (max-width: 767px) {
+    /* Reset product container */
+    .products-container,
+    .product-grid {
+      margin-top: 0 !important;
+      padding-top: 15px !important;
+      position: static !important;
+            top: -200 !important;
+
+       flex: none !important;
+
+    }
+    
+    /* Product card container */
+    .product-card[_ngcontent-ng-c3146712131] {
+      margin: 0 0 25px 0 !important;
+            display:flex !important;
+      padding: 10px !important;
+      box-sizing: border-box !important;
+      position: static !important;
+      float: none !important;
+       top: -200 !important;
+       flex: none !important;
+    }
+    
+    /* Product image container - using your specific selector */
+    .product-card[_ngcontent-ng-c3146712131] .product-list-img-wrap[_ngcontent-ng-c3146712131] {
+      overflow: hidden;
+      position: relative;
+      display:flex !important;
+      height: auto !important;
+      padding-bottom: 80% !important;
+    }
+    
+    /* Product image */
+    .product-card[_ngcontent-ng-c3146712131] .product-image {
+      position: absolute !important;
+      top: 0 !important;
+      left: 0 !important;
+      height: 100% !important;
+      object-fit: contain !important;
+    }
+    
+    /* Disable the grid cells on mobile */
+    .small-up-2 > .cell {
+      width: 50% !important;
+      float: none !important;
+    }
+    
+    /* Header protection */
+    header {
+      position: relative !important;
+      z-index: 100 !important;
+      background: white !important;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1) !important;
+    }
+    
+    /* Filter button positioning */
+    .mobile-filter-toggle {
+      bottom: 20px !important;
+      right: 20px !important;
+      z-index: 101 !important;
+    }
+    
+    /* Content spacing */
+    .main-content {
+      padding-top: 60px !important;
+    }
+    
+    /* Remove all transform effects on mobile */
+    .product-card.shift-up {
+      position: static !important;
+      top: -200 !important;
+      transform: none !important;
+       flex: none !important;
+      
+    }
+  }
+  
+  /* Tablet view (2 columns) */
+  @media (min-width: 768px) and (max-width: 1023px) {
+    .small-up-2 > .cell {
+      width: 50% !important;
+    }
+    
+    .product-card {
+      flex: 0 0 calc(50% - 15px) !important;
+    }
+  }
+`;
+
+// Create and append the style element
+const styleElement = document.createElement('style');
+styleElement.textContent = mobileProductStyles;
+document.head.appendChild(styleElement);
+  
+  
+
+// Initialize when page loads
+document.addEventListener('DOMContentLoaded', initializeMobileFilters);
+// Also initialize after a delay in case of dynamic loading
+setTimeout(initializeMobileFilters, 1000);
+
+
+
+   // Select the existing map iframe
+  const firstMap = document.querySelector('google-map iframe');
+
+  if (firstMap && firstMap.parentElement) {
+    // Add class to first map
+    firstMap.classList.add('store-map');
+
+    // Create title for the first map
+    const firstTitle = document.createElement('h3');
+    firstTitle.textContent = "Daly City Location";
+    firstTitle.className = "store-map-title";
+
+    // Insert the title above the first map
+    firstMap.parentElement.insertBefore(firstTitle, firstMap);
+
+    // Create the second map iframe with updated T-SHIRT SOURCE link
+    const newMap = document.createElement('iframe');
+    newMap.src = "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5299.371993002358!2d-122.30179537768758!3d37.836290299316914!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80857f5dec6ffb17%3A0x99366835acbdb62!2sT-SHIRT%20SOURCE!5e0!3m2!1sen!2seg!4v1746544799713!5m2!1sen!2seg";
+    newMap.className = "store-map";
+    newMap.allowFullscreen = true;
+    newMap.loading = "lazy";
+    newMap.referrerPolicy = "no-referrer-when-downgrade";
+
+    // Create title for the second map
+    const secondTitle = document.createElement('h3');
+    secondTitle.textContent = "Emeryville Location";
+    secondTitle.className = "store-map-title";
+
+    // Append title and second map below the first
+    firstMap.parentElement.appendChild(secondTitle);
+    firstMap.parentElement.appendChild(newMap);
+
+    // Add styling if not already added
+    if (!document.querySelector('#store-map-style')) {
+      const style = document.createElement('style');
+      style.id = 'store-map-style';
+      style.textContent = `
+        .store-map {
+          width: 100%;
+          max-width: 600px;
+          height: 150px;
+          border: 0;
+          margin-top: 10px;
+          margin-bottom: 30px;
+        }
+        .store-map-title {
+          font-family: Poppins, sans-serif;
+          font-size: 18px;
+          font-weight: 600;
+          margin-top: 30px;
+          margin-bottom: 5px;
+          color: #333;
+        }
+      `;
+      document.head.appendChild(style);
+    }
+  } else {
+  }
+
+function forceAddContactSection() {
+    // Try multiple selectors to find the toolbar
+    let toolbar = document.querySelector('.grid-x.align-middle') || 
+                 document.querySelector('.header-toolbar') || 
+                 document.querySelector('.top-bar');
+    
+    if (!toolbar) {
+        // Create a toolbar if none exists
+        toolbar = document.createElement('div');
+        toolbar.className = 'custom-toolbar grid-x align-middle';
+        toolbar.style.display = 'flex';
+        toolbar.style.alignItems = 'center';
+        toolbar.style.width = '100%';
+        toolbar.style.padding = '10px 0';
+        
+        // Try to insert it in a logical place
+        const header = document.querySelector('header') || document.body;
+        header.insertBefore(toolbar, header.firstChild);
+    }
+
+    // Remove existing contact section if it already exists
+    let existingContact = document.getElementById('custom-contact-section');
+    if (existingContact) {
+        existingContact.remove();
+    }
+
+    let contactWrapper = document.createElement('div');
+    contactWrapper.id = 'custom-contact-section';
+    contactWrapper.style.cssText = `
+        display: flex !important;
+        align-items: center !important;
+        gap: 30px !important;
+        margin-left: auto !important;
+        position: relative !important;
+        z-index: 999 !important;
+    `;
+
+    // Make the content more persistent by adding it to a style tag
+    if (!document.getElementById('custom-contact-styles')) {
+        const style = document.createElement('style');
+        style.id = 'custom-contact-styles';
+        style.textContent = `
+            #custom-contact-section {
+                display: flex !important;
+                align-items: center !important;
+                gap: 30px !important;
+                margin-left: auto !important;
+                position: relative !important;
+                z-index: 999 !important;
+            }
+            #custom-contact-section a {
+                text-decoration: none !important;
+                font-weight: bold !important;
+            }
+            .custom-contact-item {
+                display: flex !important;
+                align-items: center !important;
+                gap: 8px !important;
+            }
+        `;
+        document.head.appendChild(style);
+    }
+
+    // Talk to a Real Person Section
+    let talkContainer = document.createElement('div');
+    talkContainer.className = 'custom-contact-item';
+    talkContainer.style.cssText = `
+        display: flex !important;
+        align-items: center !important;
+        gap: 8px !important;
+    `;
+
+    let phoneIcon = document.createElement('img');
+    phoneIcon.src = 'https://i.postimg.cc/SKggY5tC/Phone-Call-Set.png';
+    phoneIcon.style.cssText = `
+        width: 24px !important;
+        height: 24px !important;
+        flex-shrink: 0 !important;
+    `;
+
+    let phoneText = document.createElement('div');
+    phoneText.innerHTML = `<div style="font-size:14px; color:black !important;">Talk to a Real Person</div>
+                         <a href="tel:+(415) 347 7574" style="font-size:16px; color:darkred !important; font-weight:bold !important; text-decoration:none !important;">+(415) 347 7574</a>`;
+
+    talkContainer.appendChild(phoneIcon);
+    talkContainer.appendChild(phoneText);
+
+    // Email Us Section
+    let chatContainer = document.createElement('div');
+    chatContainer.className = 'custom-contact-item';
+    chatContainer.style.cssText = `
+        display: flex !important;
+        align-items: center !important;
+        gap: 8px !important;
+    `;
+
+    let chatIcon = document.createElement('img');
+    chatIcon.src = 'https://icon2.cleanpng.com/20180625/spx/kisspng-logo-organization-2018-fiat-124-spider-abarth-abac-disaster-relief-5b316ff72458a7.6439182915299665831489.jpg';
+    chatIcon.style.cssText = `
+        width: 24px !important;
+        height: 24px !important;
+        flex-shrink: 0 !important;
+    `;
+
+    let chatText = document.createElement('div');
+    chatText.innerHTML = `<div style="font-size:14px; color:black !important;">Email Us Now</div>
+                        <a href="mailto:support@tshirtsource.com" style="font-size:16px; color:darkred !important; font-weight:bold !important; text-decoration:none !important;">E-mail us</a>`;
+
+    chatContainer.appendChild(chatIcon);
+    chatContainer.appendChild(chatText);
+
+    contactWrapper.appendChild(talkContainer);
+    contactWrapper.appendChild(chatContainer);
+
+    // Append the contact section to the toolbar
+    toolbar.appendChild(contactWrapper);
+
+    // MutationObserver to re-add if removed
+    if (!window.contactSectionObserver) {
+        window.contactSectionObserver = new MutationObserver(function(mutations) {
+            mutations.forEach(function(mutation) {
+                if (!document.getElementById('custom-contact-section')) {
+                    forceAddContactSection();
+                }
+            });
+        });
+        
+        window.contactSectionObserver.observe(toolbar, {
+            childList: true,
+            subtree: true
+        });
+    }
+
+}
+
+// Run immediately and keep checking
+function initContactSection() {
+    forceAddContactSection();
+    setInterval(forceAddContactSection, 1000);
+}
+
+// Start the process
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initContactSection);
+} else {
+    initContactSection();
+}
+
+// Patch Angular's history.pushState to detect navigation
+(function(history) {
+    const pushState = history.pushState;
+    history.pushState = function(state) {
+        if (typeof history.onpushstate == "function") {
+            history.onpushstate({state: state});
+        }
+        setTimeout(() => {
+            initializeMegaMenu();
+            initializeFilters();
+            applySavedFilterState();
+          initializeMobileFilters
+        }, 300);
+        return pushState.apply(history, arguments);
+    };
+})(window.history);
+
+// Listen to Angular route changes
+function listenToAngularRouteChanges() {
+    const appRoot = document.querySelector('[ng-version]') || document.querySelector('[ng-app]');
+    if (appRoot) {
+        const injector = angular.element(appRoot).injector();
+        if (injector) {
+            const $rootScope = injector.get('$rootScope');
+            $rootScope.$on('$routeChangeSuccess', () => {
+                setTimeout(() => {
+                    initializeMegaMenu();
+                    initializeFilters();
+                    applySavedFilterState();
+                  initializeMobileFilters
+                }, 300);
+            });
+        }
+    }
+}
+
+// Try to hook into Angular
+setTimeout(listenToAngularRouteChanges, 2000);
+</script>
+<script type=text/javascript src=//cdn.callrail.com/companies/418463061/18d6c61346083609dc9f/12/swap.js></script>
+</body>
+</html>
