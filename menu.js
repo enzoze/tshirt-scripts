@@ -1,47 +1,77 @@
 // menu.js
 
-// Mega menu toggle functionality
 function initializeMegaMenu() {
-  const toggle = document.querySelector(".menu-toggle-icon");
-  const menu = document.querySelector(".custom-mega-menu");
+  if (document.querySelector(".custom-mega-menu")) return;
 
-  if (!toggle || !menu) return;
+  const menuLink = Array.from(document.querySelectorAll(".nav-bar a"))
+    .find(el => el.textContent.trim().toLowerCase().includes("products"));
 
-  toggle.addEventListener("click", () => {
-    const isVisible = menu.classList.toggle("show");
-    window.menuState.megaMenuVisible = isVisible;
-    window.saveMenuState();
-  });
+  if (!menuLink) return;
 
-  // Restore menu state on load
-  if (window.menuState.megaMenuVisible) {
+  const menu = document.createElement("div");
+  menu.classList.add("custom-mega-menu");
+  menu.innerHTML = `
+    <div class="column">
+      <h4>T-Shirts</h4>
+      <a href="/products/short-sleeve">Short Sleeve</a>
+      <a href="/products/long-sleeve">Long Sleeve</a>
+    </div>
+    <div class="column">
+      <h4>Fleece</h4>
+      <a href="/products/hoodies">Hoodies</a>
+      <a href="/products/crewnecks">Crewnecks</a>
+    </div>
+    <div class="column">
+      <h4>Outerwear</h4>
+      <a href="/products/jackets">Jackets</a>
+    </div>
+  `;
+  menuLink.parentNode.appendChild(menu);
+
+  if (menuState.megaMenuVisible) menu.classList.add("show");
+
+  menuLink.addEventListener("mouseenter", () => {
     menu.classList.add("show");
-  }
+    window.menuState.megaMenuVisible = true;
+    saveMenuState();
+  });
+  menu.addEventListener("mouseleave", () => {
+    menu.classList.remove("show");
+    window.menuState.megaMenuVisible = false;
+    saveMenuState();
+  });
 }
 
-// Account menu toggle functionality
-function initializeAccountMenu() {
-  const toggle = document.querySelector(".account-toggle-icon");
-  const menu = document.querySelector(".account-mega-menu");
+function initializeAccountMegaMenu() {
+  if (document.querySelector(".account-mega-menu")) return;
 
-  if (!toggle || !menu) return;
+  const accountBtn = document.querySelector("#myAccountDropdown");
+  if (!accountBtn) return;
 
-  toggle.addEventListener("click", () => {
-    const isVisible = menu.classList.toggle("show");
-    window.menuState.accountMenuVisible = isVisible;
-    window.saveMenuState();
-  });
+  const menu = document.createElement("div");
+  menu.classList.add("account-mega-menu");
+  menu.innerHTML = `
+    <a href="/account/profile">Profile</a>
+    <a href="/account/orders">Orders</a>
+    <a href="/account/logout">Logout</a>
+  `;
+  accountBtn.parentNode.appendChild(menu);
 
-  // Restore account menu state on load
-  if (window.menuState.accountMenuVisible) {
+  if (menuState.accountMenuVisible) menu.classList.add("show");
+
+  accountBtn.addEventListener("mouseenter", () => {
     menu.classList.add("show");
-  }
+    window.menuState.accountMenuVisible = true;
+    saveMenuState();
+  });
+  menu.addEventListener("mouseleave", () => {
+    menu.classList.remove("show");
+    window.menuState.accountMenuVisible = false;
+    saveMenuState();
+  });
 }
 
-// Expose globally for lazy init
 window.initializeMegaMenu = function () {
   initializeMegaMenu();
-  initializeAccountMenu();
+  initializeAccountMegaMenu();
 };
-
-document.addEventListener("route:changed", window.initializeMegaMenu);
