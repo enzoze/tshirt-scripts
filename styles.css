@@ -9,247 +9,122 @@
   <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
   
 
-  <style>
-h1 {
-  color: #1a1a1a;
-}
-
-a,
-a:hover {
-  color: #aa0101;
-}
-
-.carousel-indicators li.active {
-  background: #aa0101;
-}
-
-p.m14.product-title,
-h2.r20.flex-child-auto {
-  color: #1a1a1a;
-}
-
-.product-card-wrap.selected-state {
-  border: 1px solid #1a1a1a !important;
-}
-
-.product-card-wrap:hover {
-  border: 1px solid #aa0101 !important;
-  cursor: pointer;
-}
-
-.mat-tab-list .mat-tab-label.mat-tab-label-active {
-  color: #aa0101;
-}
-
-mat-form-field.mat-form-field-type-mat-input.mat-focused .mat-form-field-flex,
-mat-form-field.mat-form-field-type-mat-input:focus .mat-form-field-flex {
-  border-color: #aa0101;
-  -webkit-box-shadow: 0 0 0 1px #aa0101;
-  box-shadow: 0 0 0 1px #aa0101;
-}
-/* Hide Product Price Everywhere Except the Cart */
-.product-price {
-  visibility: hidden;
-}
-
-
-/* Sidebar Styling for Both Stores */
-.category-list, 
-.m-t-2.r14 {  
-    background-color: white !important;
-    padding: 15px !important;
-    border-radius: 8px !important;
-    border: 1px solid #ddd !important;
-    width: 100% !important;  /* Match the "View All" button width */
-    max-width: 220px !important; /* Ensures it doesn't get too wide */
-    max-height: 500px !important;
-    overflow-y: auto !important;
-    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
-}
-
-/* Sidebar Headings */
-.category-list h2, 
-.m-t-2.r14 h2 {
-    font-size: 16px;
-    font-weight: bold;
-    color: #333 !important;
-    padding: 8px 0;
-    border-bottom: 1px solid #ddd;
-      transition: background 0.3s ease-in-out, color 0.3s ease-in-out;
-
-}
-
-/* Sidebar Hover Effects */
-.category-list a.body1, 
-.m-t-2.r14 a.body1 {
-    display: flex;
-    align-items: center;
-    padding: 8px;
-    color: #333 !important;
-    font-size: 14px;
-    font-weight: 500;
-    text-decoration: none;
-    transition: background 0.3s ease-in-out, color 0.3s ease-in-out;
-    border-radius: 4px;
-    cursor: pointer;
-}
-
-/* Dark Red Hover Effect */
-.category-list a.body1:hover, 
-.m-t-2.r14 a.body1:hover {
-    background-color: #aa0101 !important;
-    color: white !important;
-    box-shadow: 0px 0px 5px rgba(170, 1, 1, 0.3);
-      transition: background 0.3s ease-in-out, color 0.3s ease-in-out;
-
-}
-
-/* View All Button for Both Stores */
-.category-view-all {
-    display: block;
-    background-color: #aa0101 !important;
-    color: white !important;
-    text-align: center;
-    padding: 8px;
-    border-radius: 5px;
-    font-weight: bold;
-    text-decoration: none;
-    margin-top: 10px;
-    width: 100%;
-    max-width: 220px !important; /* Ensure same width as sidebar */
-    transition: background 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-}
-
-.category-view-all:hover {
-    background-color: #800000 !important;
-    box-shadow: 0px 4px 8px rgba(170, 1, 1, 0.3);
-}
-
-/* Subcategory Styling */
-.category-list .sub-category a,
-.category-list li.m-b-2.ng-star-inserted a {
-    display: flex;
-    align-items: center;
-    padding: 8px;
-    color: #666 !important;
-    font-size: 14px;
-    text-decoration: none;
-    transition: background 0.3s ease-in-out, color 0.3s ease-in-out;
-    border-radius: 4px;
-    cursor: pointer;
-}
-
-/* Hover Effect for Subcategories */
-.category-list .sub-category a:hover,
-.category-list li.m-b-2.ng-star-inserted a:hover {
-    background-color: #aa0101 !important;
-    color: white !important;
-    box-shadow: 0px 0px 5px rgba(170, 1, 1, 0.3);
-      transition: background 0.3s ease-in-out, color 0.3s ease-in-out;
-
-}
-
-/* Subcategory Arrow */
-.category-list .sub-category a::before {
-    content: "?";
-    font-size: 12px;
-    color: #aa0101;
-    margin-right: 8px;
-      transition: background 0.3s ease-in-out, color 0.3s ease-in-out;
-
-}
-
-.category-list .sub-category a:hover::before {
-    color: white;
-}
-
-  body {
-      font-family: 'Roboto', sans-serif;
-    }
-    .header-right-col.flex-container.align-middle {
-  display: none !important;
-}
-    .widget-container{position:absolute;top:10px;right:10px;display:flex;align-items:center;gap:15px;background-color:#1a1a1a;padding:10px 15px;border-radius:5px;z-index:9999}
-    .widget-icon{width:35px;height:35px}
-    .widget-link{display:flex;align-items:center;text-decoration:none;color:#fff;font-size:16px;font-weight:bold}
-    .widget-link img{margin-right:8px}
-    .category-list,.m-t-2.r14{background-color:white!important;padding:15px!important;border-radius:8px!important;border:1px solid #ddd!important;width:140%!important;max-width:1000px!important;max-height:900px!important;overflow-y:auto!important;margin-left:-60px!important;box-shadow:0 2px 10px rgba(0,0,0,0.1)}
-    .category-view-all{display:none;background-color:#aa0101!important;color:white!important;text-align:center;padding:8px;border-radius:5px;font-weight:bold;text-decoration:none;margin-top:10px;width:100%;max-width:220px!important;transition:background .3s ease-in-out,box-shadow .3s ease-in-out}
-    .mat-mdc-menu-panel,.category-dropdown-menu.header-dropdown-menu{display:none!important;visibility:hidden!important}
-    .custom-mega-menu{position:absolute;top:100px;left:10px;background:white;padding:15px 20px;width:1500px;height:500px;display:none;z-index:1000;box-shadow:0 4px 6px rgba(0,0,0,0.1);border-top:4px solid darkred}
-    .mega-menu-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
-    .mega-column h3{font-size:20px;font-weight:bold;color:darkred;margin-bottom:6px;border-bottom:1px solid lightgray;padding-bottom:4px;text-transform:none}
-    .mega-column a{display:block;text-decoration:none;color:black;font-size:14px;padding:3px 0;transition:background .3s,color .3s}
-    .mega-column a:hover{background:grey;color:white;border-radius:5px}
-    .popular{background:darkred;color:white;font-size:10px;padding:1px 4px;border-radius:5px;margin-left:5px}
-   /* Add this new style for the account mega menu */
-    .account-mega-menu {
-        position: absolute;
-        top: 100px;
-        height: 500px;
-        right: 10px;
-        background: white;
-        padding: 15px 20px;
-        width: 1500px;
-        display: none;
-        z-index: 1000;
-        box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-        border-top: 4px solid darkred;
-    }      /* Add these new styles for mobile filter */
-    .mobile-filter-toggle {
-  display: none;
-  /* Remove fixed positioning */
-  position: static;
-  /* Remove bottom/right positioning */
-  background: darkred;
-  color: white;
-  width: auto; /* Change from fixed width */
-  height: auto; /* Change from fixed height */
-  padding: 10px 15px; /* Add padding instead of fixed dimensions */
-  border-radius: 5px; /* Change from circle to rectangle */
-  border: none;
-  font-size: 16px;
-  box-shadow: none; /* Remove shadow if you want it flat */
-  z-index: auto;
-  cursor: pointer;
-  margin: 0 10px; /* Add some margin */
-}
-
-@media (max-width: 1023px) {
-  .mobile-filter-toggle {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  
-  /* Remove the transform animation for the sidebar */
-  .mobile-filter-sidebar {
-    transform: none;
-    transition: none;
-  }
-  
-  .mobile-filter-sidebar.active {
-    transform: none;
-  }
-} @media (max-width: 767px) {
-  .product-card .product-image-container {
-    height: 200px !important;
-    padding-bottom: 0 !important;
-  }
-  
-  .product-card img {
-    position: relative !important;
-    max-width: 100% !important;
-    max-height: 100% !important;
-    height: auto !important;
-  }
-}
-  
+  <style>a,a:hover{color:#aa0101}.carousel-indicators li.active{background:#aa0101}h2.r20.flex-child-auto,p.m14.product-title{color:#1a1a1a}.product-card-wrap.selected-state{border:1px solid #1a1a1a!important}.product-card-wrap:hover{border:1px solid #aa0101!important;cursor:pointer}.mat-tab-list .mat-tab-label.mat-tab-label-active{color:#aa0101}mat-form-field.mat-form-field-type-mat-input.mat-focused .mat-form-field-flex,mat-form-field.mat-form-field-type-mat-input:focus .mat-form-field-flex{border-color:#aa0101;-webkit-box-shadow:0 0 0 1px #aa0101;box-shadow:0 0 0 1px #aa0101}.product-price{visibility:hidden}.category-list,.m-t-2.r14{background-color:#fff!important;padding:15px!important;border-radius:8px!important;border:1px solid #ddd!important;width:100%!important;max-width:220px!important;max-height:500px!important;overflow-y:auto!important;box-shadow:0 2px 10px rgba(0,0,0,.1)}.category-list h2,.m-t-2.r14 h2{font-size:16px;font-weight:700;color:#333!important;padding:8px 0;border-bottom:1px solid #ddd;transition:background .3s ease-in-out,color .3s ease-in-out}.category-list a.body1,.m-t-2.r14 a.body1{display:flex;align-items:center;padding:8px;color:#333!important;font-size:14px;font-weight:500;text-decoration:none;transition:background .3s ease-in-out,color .3s ease-in-out;border-radius:4px;cursor:pointer}.category-list a.body1:hover,.m-t-2.r14 a.body1:hover{background-color:#aa0101!important;color:#fff!important;box-shadow:0 0 5px rgba(170,1,1,.3);transition:background .3s ease-in-out,color .3s ease-in-out}.category-view-all{display:block;background-color:#aa0101!important;color:#fff!important;text-align:center;padding:8px;border-radius:5px;font-weight:700;text-decoration:none;margin-top:10px;width:100%;max-width:220px!important;transition:background .3s ease-in-out,box-shadow .3s ease-in-out}.category-view-all:hover{background-color:maroon!important;box-shadow:0 4px 8px rgba(170,1,1,.3)}.category-list .sub-category a,.category-list li.m-b-2.ng-star-inserted a{display:flex;align-items:center;padding:8px;color:#666!important;font-size:14px;text-decoration:none;transition:background .3s ease-in-out,color .3s ease-in-out;border-radius:4px;cursor:pointer}.category-list .sub-category a:hover,.category-list li.m-b-2.ng-star-inserted a:hover{background-color:#aa0101!important;color:#fff!important;box-shadow:0 0 5px rgba(170,1,1,.3);transition:background .3s ease-in-out,color .3s ease-in-out}.category-list .sub-category a::before{content:"?";font-size:12px;color:#aa0101;margin-right:8px;transition:background .3s ease-in-out,color .3s ease-in-out}.category-list .sub-category a:hover::before{color:#fff}body{font-family:Roboto,sans-serif}.header-right-col.flex-container.align-middle{display:none!important}.widget-container{position:absolute;top:10px;right:10px;display:flex;align-items:center;gap:15px;background-color:#1a1a1a;padding:10px 15px;border-radius:5px;z-index:9999}.widget-icon{width:35px;height:35px}.widget-link{display:flex;align-items:center;text-decoration:none;color:#fff;font-size:16px;font-weight:700}.widget-link img{margin-right:8px}.category-list,.m-t-2.r14{background-color:#fff!important;padding:15px!important;border-radius:8px!important;border:1px solid #ddd!important;width:140%!important;max-width:1000px!important;max-height:900px!important;overflow-y:auto!important;margin-left:-60px!important;box-shadow:0 2px 10px rgba(0,0,0,.1)}.category-view-all{display:none;background-color:#aa0101!important;color:#fff!important;text-align:center;padding:8px;border-radius:5px;font-weight:700;text-decoration:none;margin-top:10px;width:100%;max-width:220px!important;transition:background .3s ease-in-out,box-shadow .3s ease-in-out}.category-dropdown-menu.header-dropdown-menu,.mat-mdc-menu-panel{display:none!important;visibility:hidden!important}.custom-mega-menu{position:absolute;top:100px;left:10px;background:#fff;padding:15px 20px;width:1500px;height:500px;display:none;z-index:1000;box-shadow:0 4px 6px rgba(0,0,0,.1);border-top:4px solid #8b0000}.mega-menu-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}.mega-column h3{font-size:20px;font-weight:700;color:#8b0000;margin-bottom:6px;border-bottom:1px solid #d3d3d3;padding-bottom:4px;text-transform:none}.mega-column a{display:block;text-decoration:none;color:#000;font-size:14px;padding:3px 0;transition:background .3s,color .3s}.mega-column a:hover{background:grey;color:#fff;border-radius:5px}.popular{background:#8b0000;color:#fff;font-size:10px;padding:1px 4px;border-radius:5px;margin-left:5px}.account-mega-menu{position:absolute;top:100px;height:500px;right:10px;background:#fff;padding:15px 20px;width:1500px;display:none;z-index:1000;box-shadow:0 4px 6px rgba(0,0,0,.1);border-top:4px solid #8b0000}.mobile-filter-toggle{display:none;position:static;background:#8b0000;color:#fff;width:auto;height:auto;padding:10px 15px;border-radius:5px;border:none;font-size:16px;box-shadow:none;z-index:auto;cursor:pointer;margin:0 10px}@media (max-width:1023px){.mobile-filter-toggle{display:flex;align-items:center;justify-content:center}.mobile-filter-sidebar{transform:none;transition:none}.mobile-filter-sidebar.active{transform:none}}@media (max-width:767px){.product-card .product-image-container{height:200px!important;padding-bottom:0!important}.product-card img{position:relative!important;max-width:100%!important;max-height:100%!important;height:auto!important}}.custom-product-enhancements{margin-bottom:8px}.custom-pricelist-button-container{position:relative;margin-top:5px;margin-bottom:15px}.custom-pricelist-button{background:#f8f8f8;border:1px solid #ddd;padding:6px 12px;border-radius:4px;cursor:pointer;font-size:13px;transition:all .2s;color:#333}.custom-pricelist-button:hover{background:#e8e8e8}.custom-pricelist-button:disabled{opacity:.7;cursor:wait}.custom-price-tooltip{position:absolute;bottom:100%;left:0;width:100%;background:#fff;border:1px solid #ddd;padding:12px;box-shadow:0 2px 8px rgba(0,0,0,.1);z-index:100;margin-bottom:8px;display:none}.price-tooltip-header{font-weight:600;font-size:13px;margin-bottom:8px;text-align:center}.price-table{width:100%;border-collapse:collapse}.price-table td,.price-table th{padding:6px;text-align:center;border-bottom:1px solid #eee}.price-table th{font-weight:600;font-size:12px}.highlight-row{background-color:#f5f5f5;font-weight:600}.custom-main-price{font-size:14px;color:#333;margin-bottom:5px}.price-bold{font-weight:600}
   </style>
 </head>
 <body>
 <script>
   
+
+  class ObserverManager {
+  constructor() {
+    this.observers = new Map();
+    this.callbacks = new Map();
+    this.debounceTimers = new Map();
+  }
+
+  // Add a new observation with debouncing
+  addObserver(name, target, options, callback, debounce = 200) {
+    // Remove existing observer if present
+    this.removeObserver(name);
+
+    const observer = new MutationObserver((mutations) => {
+      clearTimeout(this.debounceTimers.get(name));
+      this.debounceTimers.set(name, setTimeout(() => {
+        callback(mutations);
+      }, debounce));
+    });
+
+    observer.observe(target, options);
+    this.observers.set(name, observer);
+    this.callbacks.set(name, callback);
+  }
+
+  // Remove an observer
+  removeObserver(name) {
+    if (this.observers.has(name)) {
+      this.observers.get(name).disconnect();
+      this.observers.delete(name);
+      this.callbacks.delete(name);
+      clearTimeout(this.debounceTimers.get(name));
+      this.debounceTimers.delete(name);
+    }
+  }
+
+  // Disconnect all observers
+  disconnectAll() {
+    this.observers.forEach(obs => obs.disconnect());
+    this.observers.clear();
+    this.callbacks.clear();
+    this.debounceTimers.forEach(timer => clearTimeout(timer));
+    this.debounceTimers.clear();
+  }
+
+  // In your ObserverManager class, add this method:
+optimizeObservation(target, selectors, callback, options = {}) {
+  // Default options
+  const defaultOptions = {
+    debounce: 200,
+    observeOptions: { childList: true, subtree: true },
+    checkInterval: 1000
+  };
+  
+  const finalOptions = { ...defaultOptions, ...options };
+  
+  // First try immediate check
+  this.checkAndObserve(target, selectors, callback, finalOptions);
+  
+  // Set up periodic check as fallback
+  const intervalId = setInterval(() => {
+    this.checkAndObserve(target, selectors, callback, finalOptions);
+  }, finalOptions.checkInterval);
+  
+  // Return a cleanup function
+  return () => clearInterval(intervalId);
+}
+
+checkAndObserve(target, selectors, callback, options) {
+  const elements = Array.isArray(selectors) ?
+    selectors.map(sel => target.querySelector(sel)).filter(Boolean) :
+    [target.querySelector(selectors)].filter(Boolean);
+  
+  if (elements.length > 0) {
+    this.addObserver(
+      `optimized-${selectors.join('-')}`,
+      target,
+      options.observeOptions,
+      callback,
+      options.debounce
+    );
+    return true;
+  }
+  return false;
+}
+}
+
+// At the top of your script
+const apiCache = new Map();
+const CACHE_TTL = 5 * 60 * 1000; // 5 minutes
+
+// In your fetch functions, add caching:
+async function cachedFetch(url) {
+  if (apiCache.has(url)) {
+    const { data, timestamp } = apiCache.get(url);
+    if (Date.now() - timestamp < CACHE_TTL) {
+      return data;
+    }
+  }
+  
+  const response = await fetch(url);
+  const data = await response.json();
+  apiCache.set(url, { data, timestamp: Date.now() });
+  return data;
+}
+
+
+
+// Initialize globally
+window.observerManager = new ObserverManager();
   // ===== ADD THIS AT THE TOP OF YOUR SCRIPT SECTION =====
 // Track menu state
 const menuState = {
@@ -269,24 +144,6 @@ function loadMenuState() {
         Object.assign(menuState, JSON.parse(savedState));
     }
 } 
-
-function getFromLocalCache(key) {
-    try {
-        const item = localStorage.getItem(key);
-        return item ? JSON.parse(item) : null;
-    } catch {
-        return null;
-    }
-}
-
-function saveToLocalCache(key, value) {
-    try {
-        localStorage.setItem(key, JSON.stringify(value));
-    } catch (e) {
-        console.warn('LocalStorage full or blocked:', e);
-    }
-}
-
 // ========================================
 // PERSISTENT MEGA MENU SOLUTION
 // ========================================
@@ -311,14 +168,14 @@ function saveToLocalCache(key, value) {
         .product-thumb .product-image-container,
         .product-tile .product-image-container,
         .product-list-item .product-image-container {
-            position: relative;
-            width: 100%;
-            padding-bottom: 100%; /* Perfect square */
-            background: #ffffff; /* Pure white */
-            overflow: hidden;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+             height: 500px;
+  width: 100%;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #fff;
+  overflow: hidden;
             border-radius: 0 !important; /* Remove any rounded corners */
             border: none !important; /* Remove any borders */
         }
@@ -327,11 +184,15 @@ function saveToLocalCache(key, value) {
         .product-thumb img, 
         .product-tile img, 
         .product-list-item img {
-            position: absolute;
-            max-width: 85%;
-            max-height: 85%;
-            object-fit: contain;
+            display: block;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  max-width: 100%;
+  max-height: 100%;
+  position: relative;
         }
+
 
         /* Product card styling */
         .product-card {
@@ -429,6 +290,15 @@ function saveToLocalCache(key, value) {
     `;
     document.head.appendChild(style);
 
+function debounce(fn, delay) {
+    let timer;
+    return function (...args) {
+        clearTimeout(timer);
+        timer = setTimeout(() => fn.apply(this, args), delay);
+    };
+}
+  
+  
 
     // 2. Request Throttling System
     const requestQueue = [];
@@ -462,127 +332,118 @@ function saveToLocalCache(key, value) {
         });
     }
 
-    // 3. API Price Fetching with localStorage
-async function fetchRealPrices(productId, styleId, sizeId) {
-    const priceResults = {};
-
-    try {
-        await Promise.all(config.quantityTiers.map(async quantity => {
-            const cacheKey = `price-${productId}-${styleId}-${sizeId}-${quantity}`;
-
-            // ✅ Check in-memory cache
-            if (priceCache.has(cacheKey)) {
-                priceResults[quantity] = priceCache.get(cacheKey);
-                return;
-            }
-
-            // ✅ Check localStorage
-            const localStored = localStorage.getItem(cacheKey);
-            if (localStored) {
-                priceResults[quantity] = localStored;
-                priceCache.set(cacheKey, localStored); // also update memory
-                return;
-            }
-
-            // Build quote item
-            const quoteItems = [{
-                ProductId: productId,
-                ProductStyleId: styleId,
-                ProductStyleSizeId: sizeId,
-                Quantity: quantity,
-                Sides: [{
-                    SideId: "front",
-                    NumColors: config.printColors,
-                    IsFullColor: false,
-                    ArtIdentifier: "front"
-                }]
-            }];
-
-            try {
-                const response = await throttledFetch(
-                    'https://www.tshirtsource.com/TShirt_source/Api2/GetQuote',
-                    {
-                        method: 'POST',
-                        headers: { 'Content-Type': 'application/json' },
-                        body: JSON.stringify({
-                            QuoteItems: JSON.stringify(quoteItems),
-                            Format: 'JSON'
-                        })
-                    }
-                );
-
-                if (response?.OK && response.Data?.length > 0) {
-                    const priceObj = response.Data[0];
-                    const totalPrice = priceObj.ProductAndPrintingTotalOriginal ||
-                                     priceObj.ProductAndPrintingTotal || 0;
-                    const unitPrice = (totalPrice / quantity).toFixed(2);
-
-                    // ✅ Save to memory and localStorage
-                    priceCache.set(cacheKey, unitPrice);
-                    localStorage.setItem(cacheKey, unitPrice);
-
-                    priceResults[quantity] = unitPrice;
+    // 3. API Price Fetching
+    async function fetchRealPrices(productId, styleId, sizeId) {
+        const priceResults = {};
+        
+        try {
+            // Fetch all prices in parallel with throttling
+            await Promise.all(config.quantityTiers.map(async quantity => {
+                const cacheKey = `price-${productId}-${styleId}-${sizeId}-${quantity}`;
+                
+                if (priceCache.has(cacheKey)) {
+                    priceResults[quantity] = priceCache.get(cacheKey);
+                    return;
                 }
-            } catch (error) {
-                console.warn('Fetch failed for quantity', quantity, error);
+
+                const quoteItems = [{
+                    ProductId: productId,
+                    ProductStyleId: styleId,
+                    ProductStyleSizeId: sizeId,
+                    Quantity: quantity,
+                    Sides: [{
+                        SideId: "front",
+                        NumColors: config.printColors,
+                        IsFullColor: false,
+                        ArtIdentifier: "front"
+                    }]
+                }];
+
+                try {
+                    const response = await throttledFetch(
+                        'https://www.tshirtsource.com/TShirt_source/Api2/GetQuote', 
+                        {
+                            method: 'POST',
+                            headers: { 'Content-Type': 'application/json' },
+                            body: JSON.stringify({
+                                QuoteItems: JSON.stringify(quoteItems),
+                                Format: 'JSON'
+                            })
+                        }
+                    );
+
+                    if (response?.OK && response.Data?.length > 0) {
+                        const priceObj = response.Data[0];
+                        const totalPrice = priceObj.ProductAndPrintingTotalOriginal || 
+                                         priceObj.ProductAndPrintingTotal || 0;
+                        const unitPrice = (totalPrice / quantity).toFixed(2);
+                        priceCache.set(cacheKey, unitPrice);
+                        priceResults[quantity] = unitPrice;
+                    }
+                } catch (error) {
+                }
+            }));
+            
+            // Verify we have at least 3 different price points
+            const uniquePrices = new Set(Object.values(priceResults));
+            if (uniquePrices.size < 3) {
             }
-        }));
-
-        const uniquePrices = new Set(Object.values(priceResults));
-        if (uniquePrices.size < 3) {
-            console.warn('Less than 3 unique prices retrieved');
+            
+            return priceResults;
+            
+        } catch (error) {
+            return null;
         }
-
-        return priceResults;
-    } catch (error) {
-        console.error('Error fetching real prices:', error);
-        return null;
-    }
-}
-
-
-   let isEnhancing = false;
-let debounceTimer;
-
-// Updated debounce delay
-const ENHANCE_DEBOUNCE_DELAY = 1200;
-
-async function enhanceProductCards() {
-    if (isEnhancing) return;
-    isEnhancing = true;
-
-    const cards = Array.from(document.querySelectorAll('.product-card:not([data-enhanced])'));
-    for (const card of cards.slice(0, 5)) { // Only enhance first 5 new cards
-        await enhanceSingleCard(card);
-        await new Promise(resolve => setTimeout(resolve, 100)); // Stagger per card
     }
 
-    isEnhancing = false;
-}
+    // 4. Product Card Enhancement
+    let isEnhancing = false;
+    let debounceTimer;
 
-// Unified observer with improved debounce handling
-const productObserver = new MutationObserver(() => {
-    clearTimeout(debounceTimer);
-    debounceTimer = setTimeout(() => {
-        enhanceProductCards();
-    }, ENHANCE_DEBOUNCE_DELAY);
-});
+    async function enhanceProductCards() {
+        if (isEnhancing) return;
+        isEnhancing = true;
 
-// Scope observation to product grid container only
-function observeProductGrid() {
-    const productGrid = document.querySelector('.products-container') || 
-                        document.querySelector('.grid-x.grid-padding-x.align-left') || 
-                        document.body;
+        const cards = Array.from(document.querySelectorAll('.product-card:not([data-enhanced])'));
+        for (const card of cards.slice(0, 5)) {
+            await enhanceSingleCard(card);
+            await new Promise(resolve => setTimeout(resolve, 100));
+        }
+        isEnhancing = false;
 
-    productObserver.observe(productGrid, {
-        childList: true,
-        subtree: true
+        // Add this to your product card enhancement:
+function optimizeProductCards() {
+  const container = document.querySelector('.products-container');
+  if (!container) return;
+
+  // Use requestIdleCallback for non-critical work
+  if ('requestIdleCallback' in window) {
+    requestIdleCallback(() => {
+      // Implement virtualization for large lists
+      const visibleItems = Math.ceil(window.innerHeight / 300) * 4; // 4 columns
+      const cards = Array.from(container.children);
+      
+      cards.forEach((card, index) => {
+        card.style.display = index < visibleItems ? 'block' : 'none';
+        card.dataset.index = index;
+      });
+
+      // Add scroll listener for lazy loading
+      container.addEventListener('scroll', throttle(() => {
+        const scrollTop = container.scrollTop;
+        const startIdx = Math.floor(scrollTop / 300) * 4;
+        const endIdx = startIdx + visibleItems;
+        
+        cards.forEach((card, index) => {
+          card.style.display = (index >= startIdx && index <= endIdx) ? 'block' : 'none';
+        });
+      }, 200));
     });
-
-    // Run once initially
-    enhanceProductCards();
+  }
 }
+    }
 async function enhanceSingleCard(card) {
+    if (card.dataset.enhanced === 'processing') return;
     try {
         card.dataset.enhanced = 'processing';
         const infoContainer = card.querySelector('.product-info');
@@ -591,22 +452,11 @@ async function enhanceSingleCard(card) {
         const productId = card.id.match(/\d+/)?.[0];
         if (!productId) return;
 
-        // === Ensure wrapper around product card ===
-        let wrapper = card.parentElement;
-        if (!wrapper.classList.contains('enhanced-product-wrapper')) {
-            const wrapperDiv = document.createElement('div');
-            wrapperDiv.className = 'enhanced-product-wrapper';
-            wrapperDiv.style.marginBottom = '20px';
-            card.replaceWith(wrapperDiv);
-            wrapperDiv.appendChild(card);
-            wrapper = wrapperDiv;
-        }
-
-        // === Create enhancement container inside the card ===
+        // Create enhancement container
         const enhancements = document.createElement('div');
         enhancements.className = 'custom-product-enhancements';
 
-        // === Fetch product data with caching ===
+        // Fetch product data with caching
         let productData;
         if (productDataCache.has(productId)) {
             productData = productDataCache.get(productId);
@@ -618,125 +468,133 @@ async function enhanceSingleCard(card) {
             if (productData) productDataCache.set(productId, productData);
         }
 
-        // === SIZES ===
+        // Add sizes
         const styles = productData?.Styles || [];
         const sizes = styles[0]?.Sizes || [];
-        const styleId = styles[0]?.ID;
-        const sizeId = sizes[0]?.ID;
-
         const sizesElement = document.createElement('div');
         sizesElement.className = 'custom-sizes';
         sizesElement.textContent = getSizeRange(sizes);
         enhancements.appendChild(sizesElement);
 
-        // === Inject sizes inside card ===
+        // Get style/size IDs
+        const styleId = styles[0]?.ID;
+        const sizeId = sizes[0]?.ID;
+
+        // Price container
+        const priceContainer = document.createElement('div');
+        priceContainer.className = 'custom-price-container';
+
+        // Main price
+        const mainPrice = document.createElement('div');
+        mainPrice.className = 'custom-main-price';
+        mainPrice.textContent = 'Click for prices';
+        priceContainer.appendChild(mainPrice);
+
+        // Create price list link (not a button)
+        const pricelistLink = document.createElement('span');
+        pricelistLink.className = 'custom-pricelist-link';
+        pricelistLink.textContent = 'View Price List';
+        pricelistLink.style.cursor = 'pointer';
+        priceContainer.appendChild(pricelistLink);
+
+        enhancements.appendChild(priceContainer);
         infoContainer.appendChild(enhancements);
 
-        // === Create external price button ===
-        const priceButton = document.createElement('button');
-        priceButton.textContent = 'View Price List';
-        priceButton.className = 'view-price-button';
-        priceButton.style.cssText = `
-            background-color: #aa0101;
-            color: white;
-            border: none;
-            padding: 8px 12px;
-            border-radius: 4px;
-            cursor: pointer;
-            font-weight: bold;
-            margin-top: 10px;
-        `;
-
-        // === Create hidden price table ===
-        const priceContainer = document.createElement('div');
-        priceContainer.className = 'custom-price-table-container';
-        priceContainer.style.display = 'none';
-        priceContainer.style.marginTop = '12px';
-        priceContainer.style.padding = '10px';
-        priceContainer.style.border = '1px solid #ddd';
-        priceContainer.style.borderRadius = '6px';
-        priceContainer.style.backgroundColor = '#fff';
-        priceContainer.style.boxShadow = '0 2px 8px rgba(0, 0, 0, 0.1)';
-        priceContainer.innerHTML = `
-            <div style="font-weight: 600; font-size: 13px; margin-bottom: 8px; text-align: center;">
+        // Price tooltip
+        const priceTooltip = document.createElement('div');
+        priceTooltip.className = 'custom-price-tooltip';
+        priceTooltip.style.display = 'none';
+        priceTooltip.innerHTML = `
+            <div class="price-tooltip-header">
                 For a 1 color - 1 sided design
             </div>
-            <table class="price-table" style="width: 100%; font-size: 14px;">
-                <thead><tr><th>Qty</th><th>Each</th></tr></thead>
+            <table class="price-table">
+                <thead>
+                    <tr>
+                        <th>Qty</th>
+                        <th>Each</th>
+                    </tr>
+                </thead>
                 <tbody>
                     ${config.quantityTiers.map(qty => `
-                        <tr ${qty === config.defaultQuantity ? 'style="background:#fff8e1;font-weight:bold;"' : ''}>
+                        <tr ${qty === config.defaultQuantity ? 'class="highlight-row"' : ''}>
                             <td>${qty}</td>
-                            <td>Loading...</td>
+                            <td class="price-value">Click to load</td>
                         </tr>
                     `).join('')}
                 </tbody>
             </table>
         `;
 
-        // === On Click: Fetch prices & show table ===
-        priceButton.addEventListener('click', async () => {
-            priceButton.disabled = true;
-            priceButton.textContent = 'Loading...';
+        // Append tooltip to price container
+        priceContainer.appendChild(priceTooltip);
 
-            try {
-                const prices = await fetchRealPrices(productId, styleId, sizeId);
-                if (prices) {
-                    const rows = priceContainer.querySelectorAll('tbody tr');
-                    config.quantityTiers.forEach((qty, i) => {
-                        const cells = rows[i].querySelectorAll('td');
-                        if (cells.length >= 2) {
-                            cells[1].textContent = prices[qty] ? `$${prices[qty]}` : 'N/A';
+        // Click event for price list link
+        pricelistLink.addEventListener('click', async (e) => {
+            e.stopPropagation(); // Prevent card click event
+            
+            // Toggle visibility
+            const isShowing = priceTooltip.style.display !== 'none';
+            
+            if (!isShowing) {
+                // Only fetch if we haven't loaded before
+                if (priceTooltip.dataset.loaded !== 'true') {
+                    pricelistLink.textContent = 'Loading...';
+                    
+                    if (styleId && sizeId) {
+                        const prices = await fetchRealPrices(productId, styleId, sizeId);
+                        
+                        if (prices) {
+                            // Update price table
+                            const priceCells = priceTooltip.querySelectorAll('.price-value');
+                            config.quantityTiers.forEach((qty, index) => {
+                                if (priceCells[index]) {
+                                    priceCells[index].textContent = prices[qty] ? `$${prices[qty]}` : 'N/A';
+                                }
+                            });
+                            
+                            // Update main price display
+                            const defaultPrice = prices[config.defaultQuantity] || 'N/A';
+                            mainPrice.innerHTML = `<span class="price-bold">$${defaultPrice}</span> /ea for ${config.defaultQuantity} items`;
+                            
+                            priceTooltip.dataset.loaded = 'true';
                         }
-                    });
-                    priceContainer.style.display = 'block';
-                    priceButton.style.display = 'none';
-                } else {
-                    priceContainer.innerHTML = `<div style="color:red;">Failed to load prices.</div>`;
-                    priceContainer.style.display = 'block';
-                    priceButton.disabled = false;
-                    priceButton.textContent = 'Retry';
+                    }
+                    
+                    pricelistLink.textContent = 'View Price List';
                 }
-            } catch (err) {
-                priceContainer.innerHTML = `<div style="color:red;">Something went wrong.</div>`;
-                priceContainer.style.display = 'block';
-                priceButton.disabled = false;
-                priceButton.textContent = 'Retry';
+                
+                priceTooltip.style.display = 'block';
+            } else {
+                priceTooltip.style.display = 'none';
             }
         });
 
-        // === Append button + price table below the card ===
-        wrapper.appendChild(priceButton);
-        wrapper.appendChild(priceContainer);
-
-        // === Color swatches ===
+        // Color swatches
         const swatches = card.querySelectorAll('.color-swatch');
         if (swatches.length > 5) {
             const remaining = swatches.length - 5;
             const colorsCount = document.createElement('span');
             colorsCount.className = 'custom-colors-count';
             colorsCount.textContent = `+${remaining} more`;
-
+            
             const swatchContainer = card.querySelector('.swatch-wrap');
             if (swatchContainer) {
                 swatchContainer.appendChild(colorsCount);
             }
-
+            
             swatches.forEach((swatch, index) => {
                 if (index >= 5) swatch.style.display = 'none';
             });
         }
 
-        // === Remove arrows ===
-        card.querySelectorAll('.color-wrap-control').forEach(el => el.remove());
-
         card.dataset.enhanced = 'true';
+
     } catch (error) {
-        console.error('Error enhancing product card:', error);
         card.dataset.enhanced = 'error';
+        console.error('Error enhancing product card:', error);
     }
 }
-
 
 
     function getSizeRange(sizes) {
@@ -755,9 +613,7 @@ async function enhanceSingleCard(card) {
     observer.observe(document.body, { childList: true, subtree: true });
     enhanceProductCards(); // Initial run
   
-
 })();
-  
   
 // ===== REPLACE YOUR EXISTING initializeMegaMenu() WITH THIS =====
 function initializeMegaMenu() {
@@ -824,17 +680,6 @@ function initializeMegaMenu() {
     });
 }
 
-// Watch for navigation changes and reinitialize
-const menuObserver = new MutationObserver(() => {
-    if (!document.querySelector('.custom-mega-menu')) {
-        initializeMegaMenu();
-    }
-});
-
-menuObserver.observe(document.body, {
-    childList: true,
-    subtree: true
-});
 
 // ========================================
 // IMPROVED FILTER PERSISTENCE SYSTEM
@@ -1207,19 +1052,21 @@ function adjustMobileProductLayout() {
             // Ensure images are properly sized
             const imgContainer = card.querySelector('.product-image-container');
             if (imgContainer) {
-                imgContainer.style.height = 'auto';
-                imgContainer.style.paddingBottom = '100%';
+                imgContainer.style.height = '200px';
+                imgContainer.style.paddingBottom = '0';
                 imgContainer.style.position = 'relative';
             }
             
             const img = card.querySelector('.product-image');
-            if (img) {
-                img.style.position = 'absolute';
-                img.style.top = '0';
-                img.style.left = '0';
-                img.style.width = '100%';
-                img.style.height = '100%';
-                img.style.objectFit = 'contain';
+            if (img) { 
+                object.assign(img.style, {
+                     position: 'relative',
+          width: '100%',
+          height: 'auto',
+          maxWidth: '100%',
+          maxHeight: '100%',
+          objectFit: 'contain',
+                });
             }
         }
     });
@@ -1315,7 +1162,34 @@ async function processEnhancedProducts() {
     buildEnhancedFilters();
     applySavedFilterState();
 }
-
+function optimizeCardEnhancement() {
+  // Use requestIdleCallback for non-urgent work
+  if ('requestIdleCallback' in window) {
+    requestIdleCallback(() => {
+      const cards = Array.from(document.querySelectorAll('.product-card:not([data-enhanced])'));
+      if (cards.length === 0) return;
+      
+      // Process a batch of cards at a time
+      const batchSize = 5;
+      let index = 0;
+      
+      function processBatch() {
+        const batch = cards.slice(index, index + batchSize);
+        batch.forEach(card => enhanceSingleCard(card));
+        index += batchSize;
+        
+        if (index < cards.length) {
+          setTimeout(processBatch, 100); // Small delay between batches
+        }
+      }
+      
+      processBatch();
+    });
+  } else {
+    // Fallback for browsers without requestIdleCallback
+    enhanceProductCards();
+  }
+}
 // ========================================
 // CORE FILTER FUNCTIONS
 // ========================================
@@ -1544,20 +1418,6 @@ function moveBrandList() {
     }
 }
 
-function extractSwatchColors() {
-    let colorElements = document.querySelectorAll('.swatch-wrap .color-swatch');
-    let colors = new Set();
-    
-    colorElements.forEach(el => {
-        let bgColor = window.getComputedStyle(el).backgroundColor;
-        if (bgColor && bgColor !== 'rgba(0, 0, 0, 0)') {
-            colors.add(bgColor);
-        }
-    });
-    
-    return Array.from(colors);
-}
-
 // Update the price extraction function to handle more cases
 function extractHiddenPrices() {
     let products = document.querySelectorAll('.product-card');
@@ -1702,11 +1562,6 @@ function initializeFilters() {
     // Load saved filter state
     loadFilterState();
     
-    // Clear existing observer if it exists
-    if (filterObserver) {
-        filterObserver.disconnect();
-    }
-    
     // Initialize all filter functions
     extractHiddenPrices();
     forceSidebarFilters();
@@ -1714,53 +1569,12 @@ function initializeFilters() {
     enableMaterialFilter();
     processEnhancedProducts();
     
-    // Set up observer to reinitialize when filters change
-    filterObserver = new MutationObserver((mutations) => {
-        let needsReinit = false;
-        
-        mutations.forEach(mutation => {
-            if (mutation.type === 'childList') {
-                // Check if any filter-related elements were added/removed
-                if (mutation.addedNodes.length > 0 || mutation.removedNodes.length > 0) {
-                    needsReinit = true;
-                }
-            }
-        });
-        
-        if (needsReinit) {
-            initializeFilters();
-        }
-    });
-    
-    // Observe the sidebar container
-    const sidebar = document.querySelector('.category-list.m-t-2.r14');
-    if (sidebar) {
-        filterObserver.observe(sidebar, {
-            childList: true,
-            subtree: true
-        });
-    }
-    
-    // Also observe the products container for changes
-    const productsContainer = document.querySelector('.products-container') || document.querySelector('.grid-x.grid-padding-x.align-left');
-    if (productsContainer) {
-        filterObserver.observe(productsContainer, {
-            childList: true,
-            subtree: true
-        });
-    }
 }
 
 // ========================================
 // EVENT LISTENERS AND INITIALIZATION
 // ========================================
 
-document.addEventListener("DOMContentLoaded", () => {
-    initializeMegaMenu();
-    initializeFilters();
-    moveBrandAndCategoriesToBottom(); // Add this line
-
-});
 
 // Also initialize after a delay in case of dynamic loading
 setTimeout(() => {
@@ -2000,24 +1814,6 @@ function initializeAccountMegaMenu() {
 
     // Try multiple selectors to find the account menu
     const accountMenu = document.querySelector('#myAccountDropdown, [href*="/my-account"], .account-link');
-    
-    if (!accountMenu) {
-        // If not found, set up an observer to watch for it
-        accountMenuObserver = new MutationObserver((mutations) => {
-            mutations.forEach(() => {
-                if (document.querySelector('#myAccountDropdown, [href*="/my-account"], .account-link')) {
-                    createAccountMegaMenu();
-                    accountMenuObserver.disconnect();
-                }
-            });
-        });
-
-        accountMenuObserver.observe(document.body, {
-            childList: true,
-            subtree: true
-        });
-        return;
-    }
 
     createAccountMegaMenu();
 }
@@ -2089,20 +1885,7 @@ function createAccountMegaMenu() {
 }
 
 function setupAccountMenuNavigationObserver() {
-    if (window.accountMenuNavObserver) {
-        window.accountMenuNavObserver.disconnect();
-    }
-    
-    window.accountMenuNavObserver = new MutationObserver(() => {
-        if (!document.querySelector('.account-mega-menu')) {
-            initializeAccountMegaMenu();
-        }
-    });
-    
-    window.accountMenuNavObserver.observe(document.body, {
-        childList: true,
-        subtree: true
-    });
+   
 }
 // ===== ENHANCED NAVIGATION DETECTION =====
 let lastURL = window.location.href;
@@ -2112,33 +1895,59 @@ function checkForNavigation() {
         lastURL = window.location.href;
         handleNavigationChange();
     }
-    requestAnimationFrame(checkForNavigation);
 }
 
-function handleNavigationChange() {
-    // Reinitialize everything with delays to allow DOM to settle
-    setTimeout(initializeMegaMenu, 100);
-    setTimeout(initializeAccountMegaMenu, 150);
-    setTimeout(initializeFilters, 200);
-    setTimeout(applySavedFilterState, 250);
-    setTimeout(initializeMobileFilters,250);
+
+
+// Initialize all observers
+function initializeOptimizedObservers() {
+  // Setup all optimized observers
+  const cleanupFunctions = [
+    setupMegaMenuObserver(),
+    setupFiltersObserver(),
+    setupProductsObserver()
+  ].filter(Boolean);
+  
+  // Cleanup on navigation
+  window.addEventListener('beforeunload', () => {
+    cleanupFunctions.forEach(fn => fn());
+    observerManager.disconnectAll();
+  });
+  
+  // Initial checks
+  setupMegaMenuObserver();
+  setupFiltersObserver();
+  setupProductsObserver();
 }
 
-// Start the navigation checker
-requestAnimationFrame(checkForNavigation);
+// Start with more efficient loading
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', () => {
+    setTimeout(initializeOptimizedObservers, 100);
+  });
+} else {
+  setTimeout(initializeOptimizedObservers, 100);
+}
 
-// ===== INITIALIZATION =====
-document.addEventListener("DOMContentLoaded", () => {
-    loadMenuState();
-    loadFilterState();
-    initializeMegaMenu();
-    initializeAccountMegaMenu();
-    initializeFilters();
-    moveBrandAndCategoriesToBottom();
-  initializeMobileFilters
-      observeProductGrid(); // ← ✅ Add this
+// Patch history API to handle SPA navigation
+(function(history) {
+  const pushState = history.pushState;
+  history.pushState = function(state) {
+    if (typeof history.onpushstate == "function") {
+      history.onpushstate({state: state});
+    }
+    
+    // Reinitialize observers after navigation
+    setTimeout(() => {
+      observerManager.disconnectAll();
+      initializeOptimizedObservers();
+    }, 300);
+    
+    return pushState.apply(history, arguments);
+  };
+})(window.history);
 
-});
+
 
 // Also initialize after a delay
 setTimeout(() => {
@@ -2155,38 +1964,28 @@ setInterval(() => {
         initializeAccountMegaMenu();
     }
 }, 2000);
-  
-let currentURL = window.location.href;
-let navigationObserver;
-// ===== REPLACE YOUR EXISTING setupNavigationObserver() WITH THIS =====
-function setupNavigationObserver() {
-    if (navigationObserver) {
-        navigationObserver.disconnect();
-    }
-    
-    navigationObserver = new MutationObserver(() => {
-        if (window.location.href !== currentURL) {
-            currentURL = window.location.href;
-            
-            // Reinitialize after a short delay
-            setTimeout(() => {
-                initializeMegaMenu();
-                initializeAccountMegaMenu();
-                initializeFilters();
-                applySavedFilterState();
-              initializeMobileFilters
-            }, 500);
-        }
-    });
-    
-    navigationObserver.observe(document.body, {
-        childList: true,
-        subtree: true
-    });
-}
 
+const images = document.querySelectorAll('img.product-img-url, img.product-list-img');
 
+images.forEach((img, i) => {
+  // Convert PNG to optimized WebP with width control
+  const originalSrc = img.getAttribute('src');
+  if (originalSrc.includes('.png')) {
+    const optimizedSrc = originalSrc.split('?')[0] + '?format=webp&width=400';
+    img.setAttribute('src', optimizedSrc);
+  }
 
+  if (i === 0) {
+    img.setAttribute('fetchpriority', 'high');
+    img.removeAttribute('loading');
+  } else {
+    img.setAttribute('loading', 'lazy');
+  }
+
+  // Optional: Set fixed dimensions to improve layout stability
+  img.setAttribute('width', '400');
+  img.setAttribute('height', '500');
+});
 
 // ========================================
 // IMPROVED MOBILE FILTER FUNCTIONS
@@ -2885,6 +2684,7 @@ function forceAddContactSection() {
 
     let phoneIcon = document.createElement('img');
     phoneIcon.src = 'https://i.postimg.cc/SKggY5tC/Phone-Call-Set.png';
+        phoneIcon.loading = "lazy";
     phoneIcon.style.cssText = `
         width: 24px !important;
         height: 24px !important;
@@ -2909,6 +2709,8 @@ function forceAddContactSection() {
 
     let chatIcon = document.createElement('img');
     chatIcon.src = 'https://icon2.cleanpng.com/20180625/spx/kisspng-logo-organization-2018-fiat-124-spider-abarth-abac-disaster-relief-5b316ff72458a7.6439182915299665831489.jpg';
+            chatIcon.loading = "lazy";
+
     chatIcon.style.cssText = `
         width: 24px !important;
         height: 24px !important;
@@ -2959,6 +2761,7 @@ if (document.readyState === 'loading') {
     initContactSection();
 }
 
+
 // Patch Angular's history.pushState to detect navigation
 (function(history) {
     const pushState = history.pushState;
@@ -2975,28 +2778,67 @@ if (document.readyState === 'loading') {
         return pushState.apply(history, arguments);
     };
 })(window.history);
-
-// Listen to Angular route changes
-function listenToAngularRouteChanges() {
-    const appRoot = document.querySelector('[ng-version]') || document.querySelector('[ng-app]');
-    if (appRoot) {
-        const injector = angular.element(appRoot).injector();
-        if (injector) {
-            const $rootScope = injector.get('$rootScope');
-            $rootScope.$on('$routeChangeSuccess', () => {
-                setTimeout(() => {
-                    initializeMegaMenu();
-                    initializeFilters();
-                    applySavedFilterState();
-                  initializeMobileFilters
-                }, 300);
-            });
-        }
+// Mega Menu Observer
+function setupMegaMenuObserver() {
+  const menuTriggerSelector = 'a[href*="/shop/products/all"], a[href*="/products/all"]';
+  
+  observerManager.optimizeObservation(
+    document.body,
+    menuTriggerSelector,
+    () => {
+      if (!document.querySelector('.custom-mega-menu')) {
+        initializeMegaMenu();
+      }
+    },
+    {
+      observeOptions: { childList: true, subtree: true },
+      debounce: 300
     }
+  );
 }
 
-// Try to hook into Angular
-setTimeout(listenToAngularRouteChanges, 2000);
+// Filters Observer
+function setupFiltersObserver() {
+  const sidebarSelector = '.category-list.m-t-2.r14';
+  
+  observerManager.optimizeObservation(
+    document.body,
+    sidebarSelector,
+    () => {
+      if (!document.querySelector('.filter-section.enhanced-filter')) {
+        buildEnhancedFilters();
+      }
+    },
+    {
+      observeOptions: { childList: true, subtree: false },
+      debounce: 500
+    }
+  );
+}
+
+// Products Observer (for card enhancements)
+function setupProductsObserver() {
+  const containerSelectors = [
+    '.products-container',
+    '.grid-x.grid-padding-x.align-left'
+  ];
+  
+  observerManager.optimizeObservation(
+    document.body,
+    containerSelectors,
+    () => {
+      const unenhancedCards = document.querySelectorAll('.product-card:not([data-enhanced])');
+      if (unenhancedCards.length > 0) {
+        optimizeCardEnhancement();
+      }
+    },
+    {
+      observeOptions: { childList: true, subtree: false },
+      debounce: 1000
+    }
+  );
+}
+
 </script>
 <script type=text/javascript src=//cdn.callrail.com/companies/418463061/18d6c61346083609dc9f/12/swap.js></script>
 </body>
